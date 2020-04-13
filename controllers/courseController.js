@@ -1,5 +1,6 @@
 const Course = require('./../models/courseModel');
 const APIFeatures = require('./../utils/apiFeatures');
+const catchAsync = require('./../utils/catchAsync')
 
 // Top course route controller:
 exports.topCourses = (req, res, next) =>{
@@ -9,9 +10,11 @@ exports.topCourses = (req, res, next) =>{
     next();
 };
 
+//I've commented out some of this to facilitate the catchAsync function, we can clean up later - Carla
+
 // Basic routes controller:
-exports.getAllCourses = async (req, res) =>{
-    try {
+exports.getAllCourses = catchAsync(async (req, res, next) =>{
+    // try {
         //Execute query:
         const features = new APIFeatures(Course.find(), req.query)
             .filter()
@@ -28,15 +31,16 @@ exports.getAllCourses = async (req, res) =>{
                 courses
             }
         });
-    } catch (err) {
-        res.status(404).json({
-            status : 'fail',
-            message : 'erroooor ', err
-        });
-    };   
-};
-exports.getCourse = async (req, res) => {
-    try { 
+    // } catch (err) {
+    //     res.status(404).json({
+    //         status : 'fail',
+    //         message : 'erroooor ', err
+    //     });
+    // };   
+});
+
+exports.getCourse = catchAsync(async (req, res, next) => {
+    // try { 
         const course = await Course.findById(req.params.id);
 
         res.status(200).json({
@@ -46,34 +50,47 @@ exports.getCourse = async (req, res) => {
             }
         });
 
-    } catch (err) {
-        res.status(404).json({
-            status : 'fail',
-            message : err
-        });
-    }
+    // } catch (err) {
+    //     res.status(404).json({
+    //         status : 'fail',
+    //         message : err
+    //     });
+    // }
     
-};
-exports.createCourse = async (req, res) => {
-    try {
-        const newCourse = await Course.create(req.body);
+});
 
-        res.status(201).json({
-            status: 'success',
-            data: {
-                course: newCourse
-            }
-        }); 
-    } catch (err) {
-        res.status(400).json({
-            status: 'fail',
-            message: 'Invalid data sent!', err
-        })
-    }
+
+exports.createCourse = catchAsync(async (req, res, next) => {
+    // async (req, res) => {
+    //     try {
+            const newCourse = await Course.create(req.body);
+    
+            res.status(201).json({
+                status: 'success',
+                data: {
+                    course: newCourse
+                }
+            }); 
+    //     } catch (err) {
+    //         res.status(400).json({
+    //             status: 'fail',
+    //             message: 'Invalid data sent!', err
+    //         })
+    //     }
+       
+    // };
+    
+    // try {
+    // } catch (err) {
+    //     res.status(400).json({
+    //         status: 'fail',
+    //         message: 'Invalid data sent!', err
+    //     })
+    // }
    
-};
-exports.updateCourse = async (req, res) => {
-    try {
+});
+exports.updateCourse = catchAsync(async (req, res, next) => {
+    // try {
         const course = await Course.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
             runValidators: true
@@ -85,17 +102,17 @@ exports.updateCourse = async (req, res) => {
                 course
             }
         });
-    } catch (err) {
-        res.status(404).json({
-            status: 'fail',
-            message: 'Invalid data sent!'
-        })
+    // } catch (err) {
+    //     res.status(404).json({
+    //         status: 'fail',
+    //         message: 'Invalid data sent!'
+    //     })
 
-    }
+    // }
 
-};
-exports.deleteCourse = async (req, res) => {
-    try {
+});
+exports.deleteCourse = catchAsync(async (req, res, next) => {
+    // try {
         await Course.findByIdAndDelete(req.params.id);
     
         res.status(204).json({
@@ -103,13 +120,13 @@ exports.deleteCourse = async (req, res) => {
             data : null
         });
 
-    } catch (err) {
-        res.status(404).json({
-            status: 'fail',
-            message: 'Invalid data sent!'
-        })
-    }
-};
+    // } catch (err) {
+    //     res.status(404).json({
+    //         status: 'fail',
+    //         message: 'Invalid data sent!'
+    //     })
+    // }
+});
 
 // exports.getCourseStats = async (req, res) => {
 //     try {
