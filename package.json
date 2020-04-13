@@ -1,0 +1,31 @@
+{
+  "name": "coursefinder",
+  "version": "1.0.0",
+  "description": "Web Application Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "start:prod": "SET NODE_ENV=production&&nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janoweb/coursefinder.git"
+  },
+  "author": "Anna, Carla and Alex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/janoweb/coursefinder/issues"
+  },
+  "homepage": "https://github.com/janoweb/coursefinder#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.7",
+    "morgan": "^1.10.0",
+    "slugify": "^1.4.0",
+    "validator": "^13.0.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}
