@@ -2,7 +2,7 @@ const mongoose= require('mongoose');
 const slugify= require('slugify');
 const validator = require('validator');
 
-//Schema
+//Schema -- test
 const courseSchema = new mongoose.Schema({
     name : {
         type: String,
