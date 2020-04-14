@@ -1,3 +1,25 @@
+//Require Error class
+const AppError = require('./../utils/appError')
+
+//DB errors.
+//1- Invalid query field
+const handleCastErrorDB = err => {
+    const message = `Invalid ${err.path}: ${err.value}`
+    return new AppError(message, 400);
+};
+
+//2- Duplicate field in DB
+const handleDuplicateFidErrorDB = err => {
+    //Error value extrator with regular expression
+    const value = err.errmsg.match(/(["'])(\\?.)*?\1/)[0];
+    const message = `Duplicate field: ${value} Please use another value`
+    return new AppError(message, 400);
+}
+
+//3- Invalid update fields:
+
+
+//Development errors:
 const sendDevError = (err, res) => {
     res.status(err.statusCode).json({
         status: err.status,
@@ -7,6 +29,7 @@ const sendDevError = (err, res) => {
     });
 };
 
+//Droduction errors:
 const sendProError = (err, res) => {
     // Operational error, send message to client
     if (err.isOperational){
@@ -36,6 +59,13 @@ module.exports = (err, req, res, next)=>{
     if (process.env.NODE_ENV === 'development'){
         sendDevError(err, res);
     } else if (process.env.NODE_ENV === 'production'){
-        sendProError(err, res);
+        let error = { ...err};
+        
+        // Invalid id error:
+        if (error.name === 'CastError') error = handleCastErrorDB(error);
+        // Duplicate field error:
+        if (error.code === 11000) error = handleDuplicateFidErrorDB(error);
+
+        sendProError(error, res);
     }
 };
