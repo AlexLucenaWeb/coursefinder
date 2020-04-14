@@ -1,6 +1,10 @@
 const express = require('express');
 const morgan = require('morgan');
 
+//import error class & controller
+const AppError = require('./utils/appError');
+const globalErrorHandler = require('./controllers/errorController');
+
 //import routes:
 const courseRouter = require('./routes/courseRoutes');
 const userRouter = require('./routes/userRoutes');
@@ -28,10 +32,10 @@ app.use('/api/v1/users', userRouter);
 
 //ERR: Not define route:
 app.all('*',(req, res, next) =>{
-    res.status(404).json({
-        status: 'fail',
-        message: `Can´t find ${req.originalUrl} on this server!`
-    });
+    next(new AppError(`Can´t find ${req.originalUrl} on this server!`, 404));
 });
+
+//Error handling middlwr
+app.use(globalErrorHandler);
 
 module.exports = app;
