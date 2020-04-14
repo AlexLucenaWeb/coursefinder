@@ -12,7 +12,7 @@ exports.topCourses = (req, res, next) =>{
 };
 
 
-// Basic routes controller:
+// Basic routes controller
 // Errors catch by catchAsync, error handler and  error class
 exports.getAllCourses = catchAsync(async (req, res, next) =>{
         //Execute query:
