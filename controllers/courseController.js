@@ -1,6 +1,7 @@
 const Course = require('./../models/courseModel');
 const APIFeatures = require('./../utils/apiFeatures');
-const catchAsync = require('./../utils/catchAsync')
+const catchAsync = require('./../utils/catchAsync');
+const AppError = require('./../utils/appError');
 
 // Top course route controller:
 exports.topCourses = (req, res, next) =>{
@@ -10,12 +11,12 @@ exports.topCourses = (req, res, next) =>{
     next();
 };
 
-//I've commented out some of this to facilitate the catchAsync function, we can clean up later - Carla
 
 // Basic routes controller:
+// Errors catch by catchAsync, error handler and  error class
 exports.getAllCourses = catchAsync(async (req, res, next) =>{
-    // try {
         //Execute query:
+        //Calling filters from apiFeatures:
         const features = new APIFeatures(Course.find(), req.query)
             .filter()
             .sort()
@@ -30,39 +31,23 @@ exports.getAllCourses = catchAsync(async (req, res, next) =>{
             data : { 
                 courses
             }
-        });
-    // } catch (err) {
-    //     res.status(404).json({
-    //         status : 'fail',
-    //         message : 'erroooor ', err
-    //     });
-    // };   
+        });   
 });
-
 exports.getCourse = catchAsync(async (req, res, next) => {
-    // try { 
         const course = await Course.findById(req.params.id);
 
+        if (!course) {
+            return next(new AppError('No tour found with that ID', 404));
+        }
+        
         res.status(200).json({
             status : 'success',
             data : { 
                 course
             }
         });
-
-    // } catch (err) {
-    //     res.status(404).json({
-    //         status : 'fail',
-    //         message : err
-    //     });
-    // }
-    
 });
-
-
 exports.createCourse = catchAsync(async (req, res, next) => {
-    // async (req, res) => {
-    //     try {
             const newCourse = await Course.create(req.body);
     
             res.status(201).json({
@@ -70,31 +55,17 @@ exports.createCourse = catchAsync(async (req, res, next) => {
                 data: {
                     course: newCourse
                 }
-            }); 
-    //     } catch (err) {
-    //         res.status(400).json({
-    //             status: 'fail',
-    //             message: 'Invalid data sent!', err
-    //         })
-    //     }
-       
-    // };
-    
-    // try {
-    // } catch (err) {
-    //     res.status(400).json({
-    //         status: 'fail',
-    //         message: 'Invalid data sent!', err
-    //     })
-    // }
-   
+            });
 });
 exports.updateCourse = catchAsync(async (req, res, next) => {
-    // try {
         const course = await Course.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
             runValidators: true
-        })
+        });
+
+        if (!course) {
+            return next(new AppError('No tour found with that ID', 404));
+        }
     
         res.status(200).json({
             status : 'success',
@@ -102,30 +73,18 @@ exports.updateCourse = catchAsync(async (req, res, next) => {
                 course
             }
         });
-    // } catch (err) {
-    //     res.status(404).json({
-    //         status: 'fail',
-    //         message: 'Invalid data sent!'
-    //     })
-
-    // }
-
 });
 exports.deleteCourse = catchAsync(async (req, res, next) => {
-    // try {
-        await Course.findByIdAndDelete(req.params.id);
-    
+        const course = await Course.findByIdAndDelete(req.params.id);
+
+        if (!course) {
+            return next(new AppError('No tour found with that ID', 404));
+        }
+
         res.status(204).json({
             status : 'success',
             data : null
         });
-
-    // } catch (err) {
-    //     res.status(404).json({
-    //         status: 'fail',
-    //         message: 'Invalid data sent!'
-    //     })
-    // }
 });
 
 // exports.getCourseStats = async (req, res) => {
