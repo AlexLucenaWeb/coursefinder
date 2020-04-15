@@ -16,7 +16,14 @@ const handleDuplicateFidErrorDB = err => {
     return new AppError(message, 400);
 }
 
-//3- Invalid update fields:
+//3- Invalid update fields: name, average rating, type and dificultty:
+const handleValidationErrorDB = err => {
+    //Take error message fromn each field:
+    const errors = Object.values(err.errors).map(el => el.message);
+    
+    const message = `Invalid input data: ${errors.join('. ')}`;
+    return new AppError(message, 400);
+};
 
 
 //Development errors:
@@ -65,6 +72,8 @@ module.exports = (err, req, res, next)=>{
         if (error.name === 'CastError') error = handleCastErrorDB(error);
         // Duplicate field error:
         if (error.code === 11000) error = handleDuplicateFidErrorDB(error);
+        // Update error:
+        if (error.name === 'ValidationError') error = handleValidationErrorDB(error);
 
         sendProError(error, res);
     }
