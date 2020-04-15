@@ -79,6 +79,18 @@ const courseSchema = new mongoose.Schema({
     vipCourse: {
         type: Boolean,
         default: false
+    },
+    academy: {
+        type: String,
+        required: [true, 'The course have to be gaven in an academy or school']
+    },
+    type: {
+        type: String, 
+        required: [true, 'A course must have a type'],
+        enum:{
+            values: ['art', 'design', 'language', 'technology', 'sport'],
+            message: 'Type must be: art, design, language, technology, sport'
+        }
     }
 }, 
 {
