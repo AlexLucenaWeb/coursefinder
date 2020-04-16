@@ -1,10 +1,10 @@
 const express = require('express');
 const morgan = require('morgan');
 
+
 //import error class & controller
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
-
 //import routes:
 const courseRouter = require('./routes/courseRoutes');
 const userRouter = require('./routes/userRoutes');
