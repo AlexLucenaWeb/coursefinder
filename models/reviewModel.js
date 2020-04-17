@@ -4,7 +4,7 @@ const validator = require('validator');
 const reviewSchema = new mongoose.Schema(
         {
         review : {
-            type : string,
+            type : String,
             required : [true, 'Please writte a review.'],
             maxlength: [340, 'The review is too long.'],
             minlength: [25, 'The review is too short.']
