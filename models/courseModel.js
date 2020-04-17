@@ -127,6 +127,13 @@ courseSchema.virtual('durationWeeks').get(function(){
     return this.duration / 7;
 });
 
+// //virtual populate (reviews):
+courseSchema.virtual('reviews', {
+    ref: 'Review', 
+    foreignField:'course', //The course field in the review model
+    localField: '_id' //The course in this model that is the same that the foreingfield 
+});
+
 //MONGOOSE MIDDLEWARE:
 //DOCUMENT MIDDWR. Create Slug: (only for .save() and .create() (Not for update))
 courseSchema.pre('save', function(next){
