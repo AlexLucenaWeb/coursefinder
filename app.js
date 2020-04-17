@@ -8,6 +8,7 @@ const globalErrorHandler = require('./controllers/errorController');
 //import routes:
 const courseRouter = require('./routes/courseRoutes');
 const userRouter = require('./routes/userRoutes');
+const reviewRouter = require('./routes/reviewRoutes');
 
 const app = express();
 
@@ -26,9 +27,11 @@ app.use((req, res, next) => {
 });
 
 
-//routes
+//Routes
+//When the route is requested, the middleware router is called:
 app.use('/api/v1/courses', courseRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/reviews', reviewRouter);
 
 //ERR: Not define route:
 app.all('*',(req, res, next) =>{
