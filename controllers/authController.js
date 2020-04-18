@@ -14,6 +14,17 @@ const signToken = id => {
 
 const createSendToken = (user, statusCode, res) => {
     const token = signToken(user._id);
+    const cookieOptions = {
+        expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+        ),
+        httpOnly: true
+    }
+
+    if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
+    
+    res.cookie('jwt', token, cookieOptions)
+    //remove password from output
+    user.password = undefined;
 
     res.status(statusCode).json({
         status: 'success',
@@ -33,7 +44,8 @@ exports.signup = catchAsync(async(req, res, next) => {
         passwordChangedAt: req.body.passwordChangedAt,
         role: req.body.role,
         passwordResetToken: req.body.passwordResetToken,
-        passwordResetExpires: req.body.passwordResetExpires
+        passwordResetExpires: req.body.passwordResetExpires,
+        active: req.body.active
     });
 
     createSendToken(newUser, 201, res);
@@ -69,7 +81,7 @@ exports.protect = catchAsync(async (req, res, next) => {
 
     if (!token) {
         return next(
-            new AppError('Please log in to view courses', 401));
+            new AppError('Please log in to get access!', 401));
     }
     // 2. Verify the token
     const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
