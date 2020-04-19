@@ -3,7 +3,11 @@ const catchAsync = require('./../utils/catchAsync');
 
 //Basic review controller
 exports.getAllReviews =catchAsync(async (req, res, next) => {
-    const reviews = await Review.find();
+    let courseFilter = {};
+    if(req.params.courseId) courseFilter = {course: req.params.courseId};
+
+
+    const reviews = await Review.find(courseFilter);
 
     res.status(200).json({
         status: 'success',
@@ -15,9 +19,9 @@ exports.getAllReviews =catchAsync(async (req, res, next) => {
 });
 
 exports.createReview = catchAsync(async (req, res, next) => {
-    //Allow nested routes:
+    // If !user and course in body ->  Request course id from param and user id from current user
     if(!req.body.course) req.body.course = req.params.courseId;
-    if(!req.body.user) req.body.user = req.user.userId;
+    if(!req.body.user) req.body.user = req.user.id;
 
     const newReview = await Review.create(req.body);
 

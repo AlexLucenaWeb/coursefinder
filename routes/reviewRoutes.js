@@ -2,19 +2,20 @@ const express = require('express');
 const reviewController = require('./../controllers/reviewController');
 const authController = require('./../controllers/authController');
 
-const router = express.Router();
+//Using merparams to get acces from review router to courseId.
+const router = express.Router({ mergeParams: true });
 
 router
     .route('/')
     .get(reviewController.getAllReviews)
     .post(
-        // authController.protect, 
-        // authController.restrictTo('user'), 
+        authController.protect, 
+        authController.restrictTo('user'), 
         reviewController.createReview
         );
 
-router
-    .route('/:id')
-    .get(reviewController.getReview);
+// router
+//     .route('/:id')
+//     .get(reviewController.getReview);
 
 module.exports = router;
