@@ -2,9 +2,10 @@ const express = require('express');
 const courseController = require('./../controllers/courseController');
 const authController = require('./../controllers/authController')
 const router = express.Router();
-const reviewController = require('./../controllers/reviewController');
+const reviewRouter = require('./../routes/reviewRoutes');
 
-// router.param('id', courseController.checkID);
+//Use review router with this query
+router.use('/:courseId/reviews', reviewRouter);
 
 router
     .route('/top-5-courses')
@@ -25,15 +26,6 @@ router
     .delete(authController.protect,
         authController.restrictTo('admin'), 
         courseController.deleteCourse);
-
-// Create a review for current course:
-router
-    .route('/:courseId/reviews')
-    .post(
-        authController.protect, 
-        authController.restrictTo('user'), 
-        reviewController.createReview
-    );
 
 module.exports = router;
 
