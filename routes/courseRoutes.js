@@ -17,12 +17,17 @@ router
     .route('/')
 
     // authController.protect ensures only logged in users will be able to view all courses
-    .get(authController.protect, courseController.getAllCourses)
-    .post(courseController.createCourse);
+    .get(authController.protect, 
+        courseController.getAllCourses)
+    .post(authController.protect,
+        authController.restrictTo('admin', 'school'),
+        courseController.createCourse,
+    );
 router
     .route('/:id')
     .get(courseController.getCourse)
-    .patch(courseController.updateCourse)
+    .patch(courseController.updateCourse,
+        authController.restrictTo('admin', 'school'))
     .delete(authController.protect,
         authController.restrictTo('admin'), 
         courseController.deleteCourse);
