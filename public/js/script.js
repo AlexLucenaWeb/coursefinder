@@ -33,6 +33,18 @@ $( document ).ready(function() {
       target: null,
       remove: false
     });
+    $('.why__title').matchHeight({
+      byRow: true,
+      property: 'height',
+      target: null,
+      remove: false
+    });
+    $('.why').matchHeight({
+      byRow: true,
+      property: 'height',
+      target: null,
+      remove: false
+    });
 
   });
 

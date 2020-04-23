@@ -1,522 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,700" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/468702f740.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;600,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&display=swap" rel="stylesheet">
 
-    <title>Courses | The Park Camper Tour</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
 
-    <script src="https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js"></script>
-    <link
-      href="https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="header">
-      <nav class="nav nav--tours">
-        <a href="/overview.html" class="nav__el">All tours</a>
-        <form class="nav__search">
-          <button class="nav__search-btn">
-            <svg>
-              <use xlink:href="img/icons.svg#icon-search"></use>
-            </svg>
-          </button>
-          <input
-            type="text"
-            placeholder="Search tours"
-            class="nav__search-input"
-          />
-        </form>
-      </nav>
-      <div class="header__logo">
-        <img src="img/logo-white.png" alt="Natours logo" />
-      </div>
-      <nav class="nav nav--user">
-        <a href="#" class="nav__el">My bookings</a>
-        <button class="nav__el">Log out</button>
-        <a href="#" class="nav__el">
-          <img src="img/user.jpg" alt="User photo" class="nav__user-img" />
-          <span>Jonas</span>
-        </a>
+  <title>Course | CourseFinder</title>
+</head>
 
-        <!--
-        <button class="nav__el">Log in</button>
-        <button class="nav__el nav__el--cta">Sign up</button>
-        -->
-      </nav>
-    </header>
+<body class="body">
+  <!-- header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand logo" href="/">
+        <img src="./logo.svg" alt="course finder logo" class="logo__icon">
+        <span class="logo__name">Course Finder</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <section class="section-header">
-      <div class="heading-box">
-        <h1 class="heading-primary">
-          <span
-            >The Park <br />
-            Camper Tour</span
-          >
-        </h1>
-        <div class="heading-box__group">
-          <div class="heading-box__detail">
-            <svg class="heading-box__icon">
-              <use xlink:href="img/icons.svg#icon-clock"></use>
-            </svg>
-            <span class="heading-box__text">10 days</span>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="row nav-menu nav__menu">
+          <div class="col-12">
+            <ul class="navbar-nav ml-auto nav__list">
+              <li class="nav-item nav__item">
+                <a class="nav-link" href="/courses">Courses</a>
+              </li>
+              <li class="nav-item nav__item">
+                <a class="nav-link nav__link" href="/contact">Contact</a>
+              </li>
+            </ul>
           </div>
-          <div class="heading-box__detail">
-            <svg class="heading-box__icon">
-              <use xlink:href="img/icons.svg#icon-map-pin"></use>
-            </svg>
-            <span class="heading-box__text">Las Vegas, USA</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-description">
-      <div class="overview-box">
-        <div>
-          <div class="overview-box__group">
-            <h2 class="heading-secondary ma-bt-lg">Quick facts</h2>
-            <div class="overview-box__detail">
-              <svg class="overview-box__icon">
-                <use xlink:href="img/icons.svg#icon-calendar"></use>
-              </svg>
-              <span class="overview-box__label">Next date</span>
-              <span class="overview-box__text">August 2021</span>
-            </div>
-            <div class="overview-box__detail">
-              <svg class="overview-box__icon">
-                <use xlink:href="img/icons.svg#icon-trending-up"></use>
-              </svg>
-              <span class="overview-box__label">Difficulty</span>
-              <span class="overview-box__text">Medium</span>
-            </div>
-            <div class="overview-box__detail">
-              <svg class="overview-box__icon">
-                <use xlink:href="img/icons.svg#icon-user"></use>
-              </svg>
-              <span class="overview-box__label">Participants</span>
-              <span class="overview-box__text">10 people</span>
-            </div>
-            <div class="overview-box__detail">
-              <svg class="overview-box__icon">
-                <use xlink:href="img/icons.svg#icon-star"></use>
-              </svg>
-              <span class="overview-box__label">Rating</span>
-              <span class="overview-box__text">4.9 / 5</span>
-            </div>
-          </div>
-
-          <div class="overview-box__group">
-            <h2 class="heading-secondary ma-bt-lg">Your tour guides</h2>
-
-            <div class="overview-box__detail">
-              <img
-                src="img/users/user-19.jpg"
-                alt="Lead guide"
-                class="overview-box__img"
-              />
-              <span class="overview-box__label">Lead guide</span>
-              <span class="overview-box__text">Steven Miller</span>
-            </div>
-            <div class="overview-box__detail">
-              <img
-                src="img/users/user-18.jpg"
-                alt="Tour guide"
-                class="overview-box__img"
-              />
-              <span class="overview-box__label">Tour guide</span>
-              <span class="overview-box__text">Lisa Brown</span>
-            </div>
-            <div class="overview-box__detail">
-              <img
-                src="img/users/user-17.jpg"
-                alt="Intern"
-                class="overview-box__img"
-              />
-              <span class="overview-box__label">Intern</span>
-              <span class="overview-box__text">Max Smith</span>
+          <div class="col-12">
+            <div class="social">
+              <p class="social__cta">Visit us!</p>
+              <a href="/">
+                <i class="fab fa-facebook-f social__icon"></i>
+              </a>
+              <a href="">
+                <i class="fab fa-instagram social__icon"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter social__icon"></i>
+              </a>
             </div>
           </div>
         </div>
       </div>
+    </nav>
+  </header>
 
-      <div class="description-box">
-        <h2 class="heading-secondary ma-bt-lg">About the park camper tour</h2>
-        <p class="description__text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur.
-        </p>
-        <p class="description__text">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est
-          laborum!
-        </p>
-      </div>
-    </section>
-
-    <section class="section-pictures">
-      <div class="picture-box">
-        <img
-          class="picture-box__img picture-box__img--1"
-          src="img/tour-5-1.jpg"
-          alt="The Park Camper Tour 1"
-        />
-      </div>
-      <div class="picture-box">
-        <img
-          class="picture-box__img picture-box__img--2"
-          src="img/tour-5-2.jpg"
-          alt="The Park Camper Tour 1"
-        />
-      </div>
-      <div class="picture-box">
-        <img
-          class="picture-box__img picture-box__img--3"
-          src="img/tour-5-3.jpg"
-          alt="The Park Camper Tour 1"
-        />
-      </div>
-    </section>
-
-    <section class="section-map">
-      <div id="map"></div>
-      <script>
-        mapboxgl.accessToken =
-          'pk.eyJ1Ijoiam9uYXNzY2htZWR0bWFubiIsImEiOiJjam54ZmM5N3gwNjAzM3dtZDNxYTVlMnd2In0.ytpI7V7w7cyT1Kq5rT9Z1A';
-
-        const geojson = {
-          type: 'FeatureCollection',
-          features: [
-            {
-              type: 'Feature',
-              geometry: {
-                type: 'Point',
-                coordinates: [-112.987418, 37.198125]
-              },
-              properties: {
-                description: 'Zion Canyon National Park'
-              }
-            },
-            {
-              type: 'Feature',
-              geometry: {
-                type: 'Point',
-                coordinates: [-111.376161, 36.86438]
-              },
-              properties: {
-                description: 'Antelope Canyon'
-              }
-            },
-            {
-              type: 'Feature',
-              geometry: {
-                type: 'Point',
-                coordinates: [-112.115763, 36.058973]
-              },
-              properties: {
-                description: 'Grand Canyon National Park'
-              }
-            },
-            {
-              type: 'Feature',
-              geometry: {
-                type: 'Point',
-                coordinates: [-116.107963, 34.011646]
-              },
-              properties: {
-                description: 'Joshua Tree National Park'
-              }
-            }
-          ]
-        };
-
-        const map = new mapboxgl.Map({
-          container: 'map',
-          style: 'mapbox://styles/jonasschmedtmann/cjnxfn3zk7bj52rpegdltx58h',
-          scrollZoom: false
-        });
-
-        const bounds = new mapboxgl.LngLatBounds();
-
-        geojson.features.forEach(function(marker) {
-          var el = document.createElement('div');
-          el.className = 'marker';
-
-          new mapboxgl.Marker({
-            element: el,
-            anchor: 'bottom'
-          })
-            .setLngLat(marker.geometry.coordinates)
-            .addTo(map);
-
-          new mapboxgl.Popup({
-            offset: 30,
-            closeOnClick: false
-          })
-            .setLngLat(marker.geometry.coordinates)
-            .setHTML('<p>' + marker.properties.description + '</p>')
-            .addTo(map);
-
-          bounds.extend(marker.geometry.coordinates);
-        });
-
-        map.fitBounds(bounds, {
-          padding: {
-            top: 200,
-            bottom: 150,
-            left: 50,
-            right: 50
-          }
-        });
-
-        map.on('load', function() {
-          map.addLayer({
-            id: 'route',
-            type: 'line',
-            source: {
-              type: 'geojson',
-              data: {
-                type: 'Feature',
-                properties: {},
-                geometry: {
-                  type: 'LineString',
-                  coordinates: [
-                    [-112.987418, 37.198125],
-                    [-111.376161, 36.86438],
-                    [-112.115763, 36.058973],
-                    [-116.107963, 34.011646]
-                  ]
-                }
-              }
-            },
-            layout: {
-              'line-join': 'round',
-              'line-cap': 'round'
-            },
-            paint: {
-              'line-color': '#55c57a',
-              'line-opacity': 0.6,
-              'line-width': 3
-            }
-          });
-        });
-      </script>
-    </section>
-
-    <section class="section-reviews">
-      <div class="reviews">
-        <div class="reviews__card">
-          <div class="reviews__avatar">
-            <img
-              src="img/users/user-7.jpg"
-              alt="Jim Brown"
-              class="reviews__avatar-img"
-            />
-            <h6 class="reviews__user">Jim Brown</h6>
-          </div>
-          <p class="reviews__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-            dignissimos sint quo commodi corrupti accusantium veniam saepe
-            numquam.
-          </p>
-          <div class="reviews__rating">
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-          </div>
-        </div>
-
-        <div class="reviews__card">
-          <div class="reviews__avatar">
-            <img
-              src="img/users/user-14.jpg"
-              alt="Laura Wilson"
-              class="reviews__avatar-img"
-            />
-            <h6 class="reviews__user">Laura Wilson</h6>
-          </div>
-          <p class="reviews__text">
-            Veniam adipisci blanditiis, corporis sit magnam aperiam ad, fuga
-            reiciendis provident deleniti cumque similique itaque animi,
-            sapiente obcaecati beatae accusantium.
-          </p>
-          <div class="reviews__rating">
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--inactive">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-          </div>
-        </div>
-
-        <div class="reviews__card">
-          <div class="reviews__avatar">
-            <img
-              src="img/users/user-15.jpg"
-              alt="Ben Hadley"
-              class="reviews__avatar-img"
-            />
-            <h6 class="reviews__user">Ben Hadley</h6>
-          </div>
-          <p class="reviews__text">
-            Debitis, nesciunt itaque! At quis officia natus. Suscipit,
-            reprehenderit blanditiis mollitia distinctio ducimus porro tempore
-            perspiciatis sunt vel.
-          </p>
-          <div class="reviews__rating">
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-          </div>
-        </div>
-
-        <div class="reviews__card">
-          <div class="reviews__avatar">
-            <img
-              src="img/users/user-6.jpg"
-              alt="Alexander Jones"
-              class="reviews__avatar-img"
-            />
-            <h6 class="reviews__user">Alexander Jones</h6>
-          </div>
-          <p class="reviews__text">
-            Quaerat laborum eveniet ut aut maiores doloribus mollitia aperiam
-            quis praesentium sed inventore harum aliquam veritatis at adipisci
-            ea assumenda!
-          </p>
-          <div class="reviews__rating">
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-          </div>
-        </div>
-
-        <div class="reviews__card">
-          <div class="reviews__avatar">
-            <img
-              src="img/users/user-3.jpg"
-              alt="Ayla Cornell"
-              class="reviews__avatar-img"
-            />
-            <h6 class="reviews__user">Ayla Cornell</h6>
-          </div>
-          <p class="reviews__text">
-            Perferendis quo aliquid iste quas laboriosam molestias illo est
-            voluptatem odit ea. Vero placeat culpa provident dicta maiores!
-          </p>
-          <div class="reviews__rating">
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-            <svg class="reviews__star reviews__star--active">
-              <use xlink:href="img/icons.svg#icon-star"></use>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-cta">
-      <div class="cta">
-        <div class="cta__img cta__img--logo">
-          <img src="img/logo-white.png" alt="Natours logo" class="" />
-        </div>
-        <img src="img/tour-5-2.jpg" alt="" class="cta__img cta__img--1" />
-        <img src="img/tour-5-1.jpg" alt="" class="cta__img cta__img--2" />
-
-        <div class="cta__content">
-          <h2 class="heading-secondary">What are you waiting for?</h2>
-          <p class="cta__text">
-            10 days. 1 adventure. Infinite memories. Make it yours today!
-          </p>
-          <button class="btn btn--green span-all-rows">Book tour now!</button>
-        </div>
-      </div>
-    </section>
-
-    <div class="footer">
-      <div class="footer__logo">
-        <img src="img/logo-green.png" alt="Natours logo" />
-      </div>
-      <ul class="footer__nav">
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Download apps</a></li>
-        <li><a href="#">Become a guide</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <p class="footer__copyright">
-        &copy; by Jonas Schmedtmann. All rights reserved.
-      </p>
+  <div class="hero hero--without-img bg--gray">
+    <div class="hero__top">
     </div>
-  </body>
+    <div class="hero__bottom">
+    </div>
+    <div class="container">
+      <!-- breadcrumbs -->
+      <div class="breadcrumbs my-4">
+        <div class="row">
+          <div class="col-12">
+            <ul class="breadcrumbs__container">
+              <li class="breadcrumbs__list">
+                <a href="/courses" class="breadcrumbs__link">Courses</a>
+              </li>
+              <li class="breadcrumbs__list">
+                <a href="" class="breadcrumbs__link">Exploring Play: The Importance of Play in Everyday Life</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- introduction -->
+      <div class="introduction my-4">
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <h1 class="introduction__title">Exploring Play</h1>
+            <p class="introduction__text mt-4 mb-2">Understanding the nature and value of play through the course of our lives, across cultures and communities. Understanding the nature and value of play through the course of our lives, across
+              cultures
+              and communities. Understanding the nature and value of play through the course of our lives, across cultures and communities. Understanding the nature and value of play through the course of our lives, across cultures and communities.
+            </p>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="introduction__wrap-img my-4">
+              <img src="./3.jpg" alt="" class="introduction__img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- digest -->
+  <div class="digest my-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h6 class="digest__title">Summary</h6>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="digest__element">
+            <i class="fas fa-graduation-cap digest__icon"></i>
+            University:
+            <span class="digest__information">Trinity College</span>
+          </div>
+          <div class="digest__element">
+            <i class="fas fa-tag digest__icon"></i>
+            Category:
+            <span class="digest__information">Psychology</span>
+          </div>
+          <div class="digest__element">
+            <i class="fas fa-language digest__icon"></i>
+            Language:
+            <span class="digest__information">French</span>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="digest__element">
+            <i class="far fa-clock digest__icon"></i>
+            Duration:
+            <span class="digest__information">4 weeks</span>
+          </div>
+          <div class="digest__element">
+            <i class="far fa-calendar-alt digest__icon"></i>
+            Schedule:
+            <span class="digest__information">2 hours every Friday</span>
+          </div>
+          <div class="digest__element">
+            <i class="fas fa-money-bill digest__icon"></i>
+            Price:
+            <span class="digest__information">&#8364;350</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- menu course -->
+  <div class="bg--gray py-4">
+    <div class="container ">
+      <div class="menu my-5">
+        <div class="row">
+          <div class="col-12">
+            <ul class="menu__list">
+              <li class="menu__element">
+                <a href="#resume" class="menu__link menu__link--active ">
+                  Resume
+                </a>
+              </li>
+              <li class="menu__element">
+                <a href="#topics" class="menu__link">
+                  Topics
+                </a>
+              </li>
+              <li class="menu__element">
+                <a href="#details" class="menu__link">
+                  Details
+                </a>
+              </li>
+              <li class="menu__element">
+                <a href="#booking" class="menu__link">
+                  Booking
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- resume -->
+    <div id="resume" class="description my-5">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-12">
+            <div class="description__content">
+              <span class="category badge">Resume</span>
+              <h2 class="description__title">Get an introduction to the key issues in sustainability</h2>
+              <p class="description__text my-4">In this course you will study the conceptual foundations of sustainable development, and discuss the issues around sustainability as a complex problem.
+                We’ll look at the flow of energy and materials worldwide; social and political issues; wealth inequality; the impact of geography, history and culture on sustainability today; and the problems of collective action. Finally, we’ll
+                conduct
+                a SWOT analysis, looking at our resilience and prospects in the face of climate change and other global issues in sustainability. We’ll ask: are we doomed?</p>
+              <div class="description__wrap-img my-4 mt-5">
+                <img src="2.jpg" alt="" class="description__img">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- topics -->
+    <div id="topics" class="bg--gray topics my-5">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-12">
+            <div class="topics__content">
+              <span class="category badge">Topics</span>
+              <h3 class="topics__title">What will you study about?</h3>
+              <ol class="topics__list">
+                <li class="topics__element">Sustainable development and complexity</li>
+                <li class="topics__element">The economy and ecology as a metabolic system</li>
+                <li class="topics__element">Economic growth and inequality</li>
+                <li class="topics__element">The importance of geography, history and culture and the impact of human activity on the environment</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- details -->
+    <div id="details" class="details bg--white my-5">
+      <div class="container py-3">
+        <div class="row">
+          <div class="col-12">
+            <div class="details__content">
+              <span class="category badge">Details</span>
+              <h3 class="details__title">Let's look a bit closer</h3>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- booking -->
+    <div id="booking" class="booking bg--gray mt-5">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-12">
+            <div class="booking__content">
+              <span class="category badge">Booking</span>
+              <h3 class="booking__title">Let's find a place for you!</h3>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer pt-5 pb-2 bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <a href="/">
+              <img src="./logo.svg" alt="course finder logo" class="footer__logo">
+            </a>
+            <div class="social-foot">
+              <a href="/">
+                <i class="fab fa-facebook-f social-foot__icon"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter social-foot__icon"></i>
+              </a>
+              <a href="">
+                <i class="fab fa-instagram social-foot__icon"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-2">&nbsp;</div>
+          <div class="col-12 col-md-3">
+            <ul class="footer-list footer__list">
+              <li class="footer__li">
+                <a href="/courses" class="footer__link">Courses</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-3">
+            <ul class="footer__list">
+              <li class="footer__li">
+                <a href="/contact" class="footer__link">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12">
+          <p class="footer__desc">©Course Finder, 2020. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="./js/jquery.matchHeight.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./js/script.js" type="text/javascript"></script>
+</body>
+
 </html>
