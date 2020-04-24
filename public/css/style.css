@@ -10,8 +10,8 @@ font light: rgba(74, 77, 84,1);
 */
 /*
 fonts
-headers: font-family: 'Domine', serif;
-body: font-family: 'Roboto', sans-serif;
+headers: font-family: 'Raleway', sans-serif;
+body: font-family: 'Roboto Slab', serif;
 */
 /*
 list
@@ -29,7 +29,7 @@ breadcrumbs
 .body {
   font-size: 16px;
   line-height: 1.5;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: rgb(29, 33, 41);
   background-color: rgba(245,248,249,1)!important;
 }
@@ -206,7 +206,7 @@ breadcrumbs
 .hero {
   height: 60vh;
   width: 100%;
-  background-image: url(../4b.jpg);
+  background-image: url(../images/4b.jpg);
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
@@ -458,7 +458,7 @@ breadcrumbs
 }
 
 .introduction__title {
-  font-family: 'Domine', serif;
+  font-family: 'Roboto Slab', serif;
 }
 
 .introduction__text {
@@ -562,7 +562,7 @@ breadcrumbs
 
 .description__title {
   margin-bottom: 30px;
-  font-family: 'Domine', serif;
+  font-family: 'Roboto Slab', serif;
 }
 
 .description__wrap-img {
@@ -600,7 +600,7 @@ breadcrumbs
 /* END  category */
 /* START topics */
 .topics__title {
-  font-family: 'Domine', serif;
+  font-family: 'Roboto Slab', serif;
   margin-bottom: 30px;
 }
 
@@ -611,14 +611,14 @@ breadcrumbs
 /* END topics */
 /* START details */
 .details__title {
-  font-family: 'Domine', serif;
+  font-family: 'Roboto Slab', serif;
   margin-bottom: 30px;
 }
 
 /* END details */
 /* START booking */
 .booking__title {
-  font-family: 'Domine', serif;
+  font-family: 'Roboto Slab', serif;
   margin-bottom: 30px;
 }
 
@@ -672,7 +672,7 @@ breadcrumbs
 }
 
 .sub__title {
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Roboto Slab', serif;
   text-align: center;
   font-size: 2.5rem;
 }
