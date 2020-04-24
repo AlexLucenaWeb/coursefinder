@@ -16,7 +16,8 @@ router
 router
     .route('/')
 
-    // authController.protect ensures only logged in users will be able to view all courses
+    // authController.protect ensures only logged in users will be able to access certain routes
+    //authController.restrictTo enables only specified users to access routes
     .get(authController.protect, 
         courseController.getAllCourses)
     .post(authController.protect,
@@ -31,6 +32,10 @@ router
     .delete(authController.protect,
         authController.restrictTo('admin'), 
         courseController.deleteCourse);
+
+router
+    .route('/:id')
+    .post('/register', authController.register)        
 
 module.exports = router;
 
