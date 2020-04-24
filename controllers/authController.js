@@ -51,6 +51,7 @@ exports.signup = catchAsync(async(req, res, next) => {
     createSendToken(newUser, 201, res);
 });
 
+
 exports.login = catchAsync (async (req, res, next) => {
     const { email, password } = req.body;
 
@@ -86,7 +87,7 @@ exports.protect = catchAsync(async (req, res, next) => {
     // 2. Verify the token
     const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
 
-    // 3. Check if user still exists
+    // 3. Check if user token still exists
     const currentUser = await User.findById(decoded.id);
     if (!currentUser) {
         return next(new AppError('This user token no longer exists!', 401))

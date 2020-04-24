@@ -86,6 +86,24 @@ exports.deleteCourse = catchAsync(async (req, res, next) => {
         });
 });
 
+//ADDING A REGISTRATION SECTION FOR EACH COURSE
+
+// exports.registerForCourse = catchAsync(async(req, res, next) => {
+//     const course = await Course.findById(req.params.id)
+
+//     const userEnroll = await course.registerForCourse({
+//         name: req.body.name,
+//         email: req.body.email
+//     });
+//     res.status(200).json({
+//         status: 'success',
+//         message: 'Thank you for signing up! Looking forward to meeting you!'
+//     })
+// })
+
+
+///////////////////////////////////////////////////
+
 // exports.getCourseStats = async (req, res) => {
 //     try {
 //         const stats = await Course.aggregate([
