@@ -2,6 +2,7 @@ const Course = require('./../models/courseModel');
 const APIFeatures = require('./../utils/apiFeatures');
 const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');
+const basic = require('./basicHandler');
 
 // Top course route controller:
 exports.topCourses = (req, res, next) =>{
@@ -73,48 +74,18 @@ exports.updateCourse = catchAsync(async (req, res, next) => {
             }
         });
 });
-exports.deleteCourse = catchAsync(async (req, res, next) => {
-        const course = await Course.findByIdAndDelete(req.params.id);
+exports.deleteCourse = basic.deleteOne(Course);
 
-        if (!course) {
-            return next(new AppError('No tour found with that ID', 404));
-        }
+/// DONT DELETE BY NOW!
+// exports.deleteCourse = catchAsync(async (req, res, next) => {
+//         const course = await Course.findByIdAndDelete(req.params.id);
 
-        res.status(204).json({
-            status : 'success',
-            data : null
-        });
-});
+//         if (!course) {
+//             return next(new AppError('No tour found with that ID', 404));
+//         }
 
-// exports.getCourseStats = async (req, res) => {
-//     try {
-//         const stats = await Course.aggregate([
-//            {
-//                $match: {ratingAverage: {$gte: 4.5}}
-//            },
-//            {
-//                group : {
-//                    _id: null,
-//                    avgRating: { $avg: '$ratingAverage'},
-//                    avgPrice: { $avg: '$price'},
-//                    minPrice: { $min: '$price'},
-//                    maxPrice: { $max: '$price'}
-//                }
-//            }
-//         ]);
-
-//         res.status(200).json({
+//         res.status(204).json({
 //             status : 'success',
-//             data : {
-//                 stats
-//             }
+//             data : null
 //         });
-
-//     }catch (err) {
-//         res.status(404).json({
-//             status: 'fail',
-//             message: 'Invalid data sent!', err
-//         })
-//     }
-
-// }
+// });

@@ -1,5 +1,6 @@
 const Review = require('./../models/reviewModel');
 const catchAsync = require('./../utils/catchAsync');
+const basic = require('./basicHandler');
 
 //Basic review controller
 exports.getAllReviews =catchAsync(async (req, res, next) => {
@@ -47,3 +48,5 @@ exports.getReview = catchAsync(async (req, res, next) => {
         }
     });
 });
+
+exports.deleteReview = basic.deleteOne(Review);
