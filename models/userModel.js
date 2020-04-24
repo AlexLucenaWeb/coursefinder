@@ -55,13 +55,13 @@ userSchema.pre('save', function(next){
 }); 
 
 userSchema.pre('save', async function(next) {
-    //only run this function if password was changed
+    //If password was modified
     if(!this.isModified('password')) return next();
 
-    //hash password with cost of 12
+    //for security, hash the password with a cost of 12
     this.password = await bcrypt.hash(this.password, 12);
 
-    // delete confirm password field
+    // remove confirm password field
     this.confirmPassword = undefined;
     next();
 });
@@ -95,11 +95,11 @@ userSchema.methods.createPasswordResetToken = function () {
 const resetToken = crypto.randomBytes(32).toString('hex');
 
 this.passwordResetToken = crypto
-.createHash('sha256')
-.update(resetToken)
-.digest('hex');
+    .createHash('sha256')
+    .update(resetToken)
+    .digest('hex');
 
-console.log({resetToken},  this.passwordResetToken);
+console.log({resetToken}, this.passwordResetToken);
 
 this.passwordResetExpires = Date.now() + 10 * 60 * 1000; 
 

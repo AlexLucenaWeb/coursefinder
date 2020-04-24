@@ -13,10 +13,10 @@ router
 
 router
     .route('/')
-    // authController.protect ensures only logged in users will be able to view all courses
+    // authController.protect ensures only logged in users will be able to access certain routes
+    //authController.restrictTo enables only specified users to access routes
     .get(courseController.getAllCourses)
-    .post(
-        authController.protect,
+    .post(authController.protect,
         authController.restrictTo('admin', 'school'),
         courseController.createCourse,
     );
