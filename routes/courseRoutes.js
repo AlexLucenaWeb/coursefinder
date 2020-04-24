@@ -33,9 +33,5 @@ router
         authController.restrictTo('admin'), 
         courseController.deleteCourse);
 
-router
-    .route('/:id')
-    .post('/register', authController.register)        
-
 module.exports = router;
 
