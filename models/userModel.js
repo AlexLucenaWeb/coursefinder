@@ -67,7 +67,6 @@ userSchema.pre('save', async function(next) {
 });
 
 userSchema.pre(/^find/, function(next) {
-    //This points to current query
     this.find({ active: {$ne: false} } );
     next();
 })
