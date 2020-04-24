@@ -45,6 +45,8 @@ reviewSchema.pre(/^find/, function(next){
     next();
 });
 
+//Each user can review each course only one time.
+reviewSchema.index({course: 1, user: 1}, {unique: true});
 
 const Review = mongoose.model('Review', reviewSchema);
 module.exports = Review;

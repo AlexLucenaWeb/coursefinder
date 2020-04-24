@@ -36,7 +36,8 @@ const courseSchema = new mongoose.Schema(
             type: Number,
             default: 4.5, 
             min: [1, 'Rating must be above 1'],
-            max: [5, 'Rating must be below 5']
+            max: [5, 'Rating must be below 5'],
+            set: value => Math.round(value * 10 ) / 10
         },
         ratingQuantity: {
             type: Number,
@@ -121,6 +122,13 @@ const courseSchema = new mongoose.Schema(
         toObject: {virtuals: true},
     }
 );
+
+
+//Adding indexes to make faster searchs
+courseSchema.index({price: 1, ratingAverage: -1 });
+courseSchema.index({slug: 1});
+courseSchema.index({type: 1});
+
 
 //Virtual properties: 
 courseSchema.virtual('durationWeeks').get(function(){
