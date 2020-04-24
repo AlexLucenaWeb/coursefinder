@@ -1,6 +1,7 @@
 const User = require('./../models/userModel');
 const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');
+const basic = require('./basicHandler');
 
 const filterObj = (obj, ...allowedFields)=> {
     const newObj = {};
@@ -65,15 +66,7 @@ exports.createUser = (req, res) => {
         message: 'This route is not yet implemented'
     });
 }
-exports.updateUser = (req, res) => {
-    res.status(500).json({
-        status : 'error', 
-        message: 'This route is not yet implemented'
-    });
-}
-exports.deleteUser = (req, res) => {
-    res.status(500).json({
-        status : 'error', 
-        message: 'This route is not yet implemented'
-    });
-}
+
+//Admin routes for CRUD on users:
+exports.updateUser = basic.updateOne(User); //Do NOT update password using this function.
+exports.deleteUser = basic.deleteOne(User);

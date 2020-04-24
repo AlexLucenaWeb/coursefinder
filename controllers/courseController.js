@@ -47,36 +47,42 @@ exports.getCourse = catchAsync(async (req, res, next) => {
             }
         });
 });
-exports.createCourse = catchAsync(async (req, res, next) => {
-            const newCourse = await Course.create(req.body);
-    
-            res.status(201).json({
-                status: 'success',
-                data: {
-                    course: newCourse
-                }
-            });
-});
-exports.updateCourse = catchAsync(async (req, res, next) => {
-        const course = await Course.findByIdAndUpdate(req.params.id, req.body, {
-            new: true,
-            runValidators: true
-        });
 
-        if (!course) {
-            return next(new AppError('No tour found with that ID', 404));
-        }
-    
-        res.status(200).json({
-            status : 'success',
-            data : {
-                course
-            }
-        });
-});
+exports.createCourse = basic.createOne(Course);
+exports.updateCourse = basic.updateOne(Course);
 exports.deleteCourse = basic.deleteOne(Course);
 
 /// DONT DELETE BY NOW!
+
+// exports.createCourse = catchAsync(async (req, res, next) => {
+//             const newCourse = await Course.create(req.body);
+    
+//             res.status(201).json({
+//                 status: 'success',
+//                 data: {
+//                     course: newCourse
+//                 }
+//             });
+// });
+
+// exports.updateCourse = catchAsync(async (req, res, next) => {
+//         const course = await Course.findByIdAndUpdate(req.params.id, req.body, {
+//             new: true,
+//             runValidators: true
+//         });
+
+//         if (!course) {
+//             return next(new AppError('No tour found with that ID', 404));
+//         }
+    
+//         res.status(200).json({
+//             status : 'success',
+//             data : {
+//                 course
+//             }
+//         });
+// });
+
 // exports.deleteCourse = catchAsync(async (req, res, next) => {
 //         const course = await Course.findByIdAndDelete(req.params.id);
 

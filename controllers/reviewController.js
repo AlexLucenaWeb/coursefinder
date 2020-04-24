@@ -18,22 +18,6 @@ exports.getAllReviews =catchAsync(async (req, res, next) => {
         }
     });
 });
-
-exports.createReview = catchAsync(async (req, res, next) => {
-    // If !user and course in body ->  Request course id from param and user id from current user
-    if(!req.body.course) req.body.course = req.params.courseId;
-    if(!req.body.user) req.body.user = req.user.id;
-
-    const newReview = await Review.create(req.body);
-
-    res.status(201).json({
-        status: 'success',
-        data: {
-            review: newReview
-        }
-    });
-});
-
 exports.getReview = catchAsync(async (req, res, next) => {
     const review = await Review.findById(req.params.id);
 
@@ -49,4 +33,29 @@ exports.getReview = catchAsync(async (req, res, next) => {
     });
 });
 
+//Midleware to set de User and Course ID
+exports.setIds = (req, res, next) =>{
+    // If !user and course in body ->  Request course id from param and user id from current user
+    if(!req.body.course) req.body.course = req.params.courseId;
+    if(!req.body.user) req.body.user = req.user.id;
+    next();
+}
+
+exports.createReview = basic.createOne(Review);
+exports.updateReview = basic.updateOne(Review);
 exports.deleteReview = basic.deleteOne(Review);
+
+// exports.createReview = catchAsync(async (req, res, next) => {
+//     // If !user and course in body ->  Request course id from param and user id from current user
+//     if(!req.body.course) req.body.course = req.params.courseId;
+//     if(!req.body.user) req.body.user = req.user.id;
+
+//     const newReview = await Review.create(req.body);
+
+//     res.status(201).json({
+//         status: 'success',
+//         data: {
+//             review: newReview
+//         }
+//     });
+// });
