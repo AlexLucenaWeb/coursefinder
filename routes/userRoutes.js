@@ -20,7 +20,7 @@ router.delete('/deleteMe',
 authController.protect, 
 userController.deleteMe);
 
-
+router.get('/me', authController.protect, userController.getMe, userController.getUser);
 //user 
 router
     .route('/')

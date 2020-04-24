@@ -10,25 +10,25 @@ router.use('/:courseId/reviews', reviewRouter);
 router
     .route('/top-5-courses')
     .get(courseController.topCourses, courseController.getAllCourses);
-// router
-//     .route('/course-stats')
-//     .get(courseController.getCourseStats);
+
 router
     .route('/')
-
     // authController.protect ensures only logged in users will be able to view all courses
-    .get(authController.protect, 
-        courseController.getAllCourses)
-    .post(authController.protect,
+    .get(courseController.getAllCourses)
+    .post(
+        authController.protect,
         authController.restrictTo('admin', 'school'),
         courseController.createCourse,
     );
+    
 router
     .route('/:id')
     .get(courseController.getCourse)
-    .patch(courseController.updateCourse,
+    .patch(
+        courseController.updateCourse,
         authController.restrictTo('admin', 'school'))
-    .delete(authController.protect,
+    .delete(
+        authController.protect,
         authController.restrictTo('admin'), 
         courseController.deleteCourse);
 
