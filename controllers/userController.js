@@ -11,18 +11,6 @@ const filterObj = (obj, ...allowedFields)=> {
     return newObj;
 }
 
-exports.getAllUsers = catchAsync (async (req, res, next) => {
-    const users = await User.find();
-
-    res.status(200).json({
-        status : 'success',
-        result : users.length,
-        data : { 
-            users
-        }
-    }); 
-});
-
 exports.updateMe = catchAsync (async (req, res, next) => {
     //1. create error if users tries to update the password
     if (req.body.password || req.body.confirmPassword) {
@@ -54,19 +42,16 @@ exports.deleteMe = catchAsync(async( req, res, next) => {
     });
 })
 
-exports.getUser = (req, res) => {
-    res.status(500).json({
-        status : 'error', 
-        message: 'This route is not yet implemented'
-    });
-}
 exports.createUser = (req, res) => {
     res.status(500).json({
         status : 'error', 
-        message: 'This route is not yet implemented'
+        message: 'This route is not defined. Please go to /singup instead'
     });
 }
 
+// Basic routes controller gotten from basic handler
+exports.getAllUsers = basic.getAll(User);
 //Admin routes for CRUD on users:
+exports.getUser = basic.getOne(User);
 exports.updateUser = basic.updateOne(User); //Do NOT update password using this function.
 exports.deleteUser = basic.deleteOne(User);
