@@ -3,10 +3,10 @@ const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');
 const basic = require('./basicHandler');
 
-const filterObj = (obj, ...allowedFields)=> {
-    const newObj = {};
+const filterObject = (obj, ...allowedFields)=> {
+    const newObject = {};
     Object.keys(obj).forEach(el => {
-        if (allowedFields.includes(el)) newObj[el] =obj[el]; 
+        if (allowedFields.includes(el)) newObject[el] =obj[el]; 
     })
     return newObj;
 }
@@ -17,10 +17,10 @@ exports.updateMe = catchAsync (async (req, res, next) => {
         return next(new AppError('Unavailable! To update your password, please go to updateMyPassword!', 400))
     }
     //2. Filter out unwanted field names
-    const filteredBody = filterObj(req.body, 'name', 'email');
+    const filteredFields = filterObject(req.body, 'name', 'email');
 
     //3. Update user
-    const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredBody, {
+    const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredFields, {
         new: true, 
         runValidators: true
     });
