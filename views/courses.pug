@@ -76,21 +76,20 @@ block main
         each course in courses
           .col-xs.col-md-6.col-xl-3.mb-4
             .card
-              img.card-img-top(src='./images/2.jpg' alt='course')
+              img.card-img-top(src=`./images/courses/${course.imageCover}` alt=`${course.name}`)
               .card-body.card__body
                 .card-head
-                  h5.card-title.card__title Exploring Play: The Importance of Play in Everyday Life
-                p.card__text
-                  | Understanding the nature and value of play through the course of our lives, across cultures and communities.
+                  h5.card-title.card__title= course.name
+                p.card__text= course.summary
                 p.card__text
                   span
                     i.fas.fa-graduation-cap.card__icon
-                    |  Trinity College
+                    = `${course.academy.name}`
                   span
-                    i.fas.fa-tag.card__icon
-                    |  Psychology
+                    i.fas.fa-tag.card__icon 
+                    = `${course.type}`
                   span
                     i.far.fa-clock.card__icon
-                    |  2 weeks
+                    = `${course.scheduleBasic}`
               .card__wrap-btn
-                a.btn.btn-primary.card__btn.custom__btn(href='#') Read more
+                a.btn.btn-primary.card__btn.custom__btn(href=`/courses/${course.slug}.`) Read more

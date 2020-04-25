@@ -39,6 +39,6 @@
   },
   "type": "IT",
   "scheduleBasic": "4 hours per week",
-  "Scheduling": ["Saturdays, 10:00 – 4:00pm"],
+  "scheduling": ["Saturdays, 10:00 – 4:00pm"],
   "requirements": "This course starts at the very beginning with PhotoShop, Illustrator and InDesign. Applicants must have basic computer skills."
 }]

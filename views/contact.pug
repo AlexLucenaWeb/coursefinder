@@ -1,4 +1,64 @@
 extends skeleton
 
 block main
-  h1 Contact page
+  .bg--gray
+    .container.pt-5.pb-2
+      .row
+        .col-12
+          .sub
+            h1.sub__title.mb-3 We are here for you
+            p.sub__text
+              | How can we help? Tell us about your dreams and goals and we will try to change them into reality.
+            img.sub__img(src='./images/contact-2.svg' alt='')
+              
+              
+  .container.py-5
+    .row
+      .col-12
+        .sub
+          h3.sub__title.mb-3 Reach us! 
+          p.sub__text
+            | There are many ways to get n touch with us! Make a first step, we will join you on the way.
+      .col-12.col-lg-4
+        .why
+          i.fas.fa-phone.why__icon--classic
+          h3.why__title Call us
+          p.why__text
+            a.why__link(href='tel:+35-444-555-1212') +35-444-555-1212
+      .col-12.col-lg-4
+        .why
+          i.fas.fa-envelope-open-text.why__icon--classic
+          h3.why__title Send an email
+          p.why__text
+            a.why__link(href='mailto:hello@coursefinder.ie?Subject=Hello%20CourseFinder' target='_top') hello@coursefinder.ie
+      .col-12.col-lg-4
+        .why
+          i.fas.fa-map-marker-alt.why__icon--classic
+          h3.why__title Visit us
+          p.why__text
+            address.why__link
+              | 23 Merrion Square,
+              | Dublin 2
+              
+  //- #map
+    
+  .py-5.welcome.bg--white
+    .container
+      .row
+        .col-12.col-md-6.welcome__text
+          .sub
+            h3.sub__title.sub__title--small.mb-3 Ask and It Is Given
+            p.sub__text.sub__text--small
+              | We are here to help you! If you prefer to contact us via social media, feel free to drop us a message on facebook, instagram or twitter.
+            p.text-center.mt-4
+              a.welcome__social(href='/')
+                i.fab.fa-facebook-f
+              a.welcome__social(href='#')
+                i.fab.fa-twitter
+              a.welcome__social(href='')
+                i.fab.fa-instagram
+        .col-12.col-md-6.welcome__img-wrap
+          img.welcome__img(src='./images/group-of-people-studying.jpg' alt='People Watching a Video')
+            
+      
+          
