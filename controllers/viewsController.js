@@ -17,7 +17,10 @@ exports.getCourses = catchAsync(async(req, res, next) => {
 });
 
 exports.getCourse = catchAsync(async (req, res, next) => {
-  const course = await Course.findOne({ slug: req.params.slug }).populate();
+  const course = await Course.findOne({ slug: req.params.slug }).populate({
+    path: 'reviews',
+    fields: 'review rating user'
+  });
 
   //catch error
   if (!course) {

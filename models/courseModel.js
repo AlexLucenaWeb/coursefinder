@@ -87,13 +87,14 @@ const courseSchema = new mongoose.Schema({
   },
   academy: {
     type: Object,
+    nameAbbr: String,
     name: {
       type: String,
       required: [true, 'An academy must have a name'],
       unique: [true, 'A course must have a unique name'],
       trim: true,
-      maxlength: [40, 'The course name is too long'],
-      minlength: [5, 'The course name is too short']
+      maxlength: [40, 'The academy name is too long'],
+      minlength: [5, 'The academy name is too short']
     },
     location: {
       //GeoJSON:
@@ -115,7 +116,7 @@ const courseSchema = new mongoose.Schema({
       message: 'Type must be: art, design, language, technology, sport'
     }
   },
-  Scheduling: {
+  scheduling: {
     type: [String],
     required: [true, 'A course must have a Scheduling']
   },

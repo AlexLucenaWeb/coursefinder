@@ -10,8 +10,8 @@ font light: rgba(74, 77, 84,1);
 */
 /*
 fonts
-headers: font-family: 'Raleway', sans-serif;
-body: font-family: 'Roboto Slab', serif;
+body: font-family: 'Raleway', sans-serif;
+headers: font-family: 'Roboto Slab', serif;
 */
 /*
 list
@@ -289,12 +289,17 @@ breadcrumbs
 }
 
 .breadcrumbs__list:first-of-type .breadcrumbs__link:hover {
-  color: rgba(245, 85, 54, 1);
+  color: rgba(255,255,255,1);
+  font-weight: bolder;
   text-decoration: none;
 }
 
 .breadcrumbs__link {
   color: rgb(29, 33, 41);
+}
+
+.breadcrumbs__link--active {
+  font-weight: bolder;
 }
 
 /* END breadcrumbs */
@@ -328,7 +333,7 @@ breadcrumbs
 
 .card__icon {
   color: #2EC4B6;
-  margin-right: 2px;
+  margin-right: 5px;
 }
 
 .card__wrap-btn {
@@ -367,7 +372,7 @@ breadcrumbs
   border: 2px solid rgba(245, 85, 54, .5);
 }
 
-/* START course card */
+/* END course card */
 /* START steps */
 .steps {
   padding: 0;
@@ -758,6 +763,13 @@ breadcrumbs
   color: rgba(180, 58, 119, 1);
 }
 
+.small__header {
+  font-weight: bolder;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  display: inline-block;
+}
+
 /* END welcome */
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
@@ -1091,7 +1103,7 @@ breadcrumbs
 
   /* general */
   .conatiner--max {
-    max-width: 80% !important;
+    max-width: 85% !important;
   }
 
   /* START footer */

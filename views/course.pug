@@ -16,7 +16,7 @@ block main
               li.breadcrumbs__list
                 a.breadcrumbs__link(href='/courses') Courses
               li.breadcrumbs__list
-                span.breadcrumbs__link= `${course.name}`
+                span.breadcrumbs__link.breadcrumbs__link--active= `${course.name}`
 
       .introduction.my-4
         .row
@@ -49,7 +49,7 @@ block main
           .digest__element
             i.far.fa-clock.digest__icon
             |             Duration:
-            span.digest__information= `${course.academy.name}`
+            span.digest__information= `${course.duration} weeks`
           .digest__element
             i.far.fa-calendar-alt.digest__icon
             |             Schedule:
@@ -78,6 +78,9 @@ block main
               li.menu__element
                 a.menu__link(href='#booking')
                   | Booking
+              li.menu__element
+                a.menu__link(href='#reviews')
+                  | Reviews
                   
   #resume.description.my-5
     .container.py-5
@@ -103,13 +106,69 @@ block main
               +topics(x)
 
             
-  #details.details.bg--white.my-5
-    .container.py-3
+  #details.details.bg--gray.my-5
+    .container.py-5
       .row
         .col-12
           .details__content
             span.category.badge Details
-            h3.details__title Let&apos;s look a bit closer
+            .card.mb-3(style='max-width: 90%;margin-left: auto; margin-right:auto')  
+              .row
+                .col-12
+                  h4.card-title.pt-4.pb-3.text-center.font-weight-bold A few more details...
+                .col-md-12
+                  img.card-img(src=`/images/courses/${course.images[2]}` alt=`${course.name}`)
+                .col-md-12
+                  .card-body
+                    ul.list-group.list-group-flush
+                      li.list-group-item 
+                        b Hosted by: 
+                        span= course.academy.name
+                      li.list-group-item 
+                        b Address: 
+                        span= course.academy.address
+                      li.list-group-item 
+                        b.small__header Start Date:  
+                        - const startDate = course.startDates[0].toLocaleString('en-GB', {month: 'long', year: 'numeric'})
+                        span=  startDate
+                      li.list-group-item 
+                        b.small__header Schedual: 
+                        ol
+                          each schedul in course.scheduling 
+                            li= `${schedul}`
+                      li.list-group-item 
+                        b Maximum size of group: 
+                        span= course.maxGroupSize
+                      li.list-group-item 
+                        b Difficulty:  
+                        span= course.difficulty
+                      li.list-group-item 
+                        b Rating: 
+                        span= course.ratingAverage
+                      li.list-group-item 
+                        b.small__header Teachers: 
+                        ol
+                          each teacher in course.teachers 
+                            li= `${teacher}`
+                      li.list-group-item 
+                        b.small__header Achivements: 
+                        ol
+                          each achievement in course.achievements 
+                            li= `${achievement}`
+                      li.list-group-item 
+                        b Requirements: 
+                        span= course.requirements
+
+            
+  #reviews.details.bg--white.my-5
+    .container.py-3
+      .row
+        .col-12
+          .details__content
+            span.category.badge Reviews
+            h3.details__title Reviews Lorem Ipsum
+            each review in course.reviews
+              p= review
             
             
   #booking.booking.bg--gray.mt-5
