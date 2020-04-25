@@ -31,7 +31,11 @@ breadcrumbs
   line-height: 1.5;
   font-family: 'Raleway', sans-serif;
   color: rgb(29, 33, 41);
-  background-color: rgba(245, 248, 249, 1) !important;
+  background-color: rgba(245, 248, 249, 1);
+}
+
+.bg--white {
+  background-color: rgba(245,248,249,1);
 }
 
 .bg--gray {
@@ -453,6 +457,10 @@ breadcrumbs
   font-weight: bolder;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+.steps__link:hover {
+  text-decoration: none!important;
 }
 
 /* END steps */

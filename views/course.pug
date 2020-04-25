@@ -28,7 +28,7 @@ block main
               img.introduction__img(src=`/images/courses/${course.imageCover}` alt=`${course.name}`)
 
   .digest.my-5
-    .container
+    .container.bg--white
       .row
         .col-12
           h6.digest__title Summary
@@ -82,7 +82,7 @@ block main
                 a.menu__link(href='#reviews')
                   | Reviews
                   
-  #resume.description.my-5
+  #resume.description.my-5.bg--white
     .container.py-5
       .row
         .col-12
@@ -94,19 +94,20 @@ block main
               img.description__img(src=`/images/courses/${course.images[1]}` alt=`${course.name}`)
                 
     
-  #topics.bg--gray.topics.my-5
-  .container.py-5
-    .row
-      .col-12
-        .topics__content
-          span.category.badge Topics
-          h3.topics__title What will you study about?
-          ol.topics__list
-            for x in course.topics
-              +topics(x)
+  #topics.topics.my-5
+    .bg--gray
+      .container.py-5
+        .row
+          .col-12
+            .topics__content
+              span.category.badge Topics
+              h3.topics__title What will you study about?
+              ol.topics__list
+                for x in course.topics
+                  +topics(x)
 
             
-  #details.details.bg--gray.my-5
+  #details.details.bg--white.my-5
     .container.py-5
       .row
         .col-12
@@ -160,8 +161,8 @@ block main
                         span= course.requirements
 
             
-  #reviews.details.bg--white.my-5
-    .container.py-3
+  #reviews.details.bg--gray.my-5
+    .container.py-5
       .row
         .col-12
           .details__content
@@ -171,7 +172,7 @@ block main
               p= review
             
             
-  #booking.booking.bg--gray.mt-5
+  #booking.booking.bg--white.my-5
     .container.py-5
       .row
         .col-12
