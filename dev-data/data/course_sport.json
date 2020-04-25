@@ -1,0 +1,37 @@
+[
+    {
+    "name": "Sports Coaching",
+    "slug": "sports-coaching",
+    "duration": 10,
+    "maxGroupSize": 25,
+    "difficulty": "medium",
+    "ratingAverage": 4.5,
+    "price": 989,
+    "summary": "TLearn how to develop, lead, and motivate high performing sports teams using impactful sports coaching strategies.",
+    "description": "Coaching skills have become increasingly sought after for improving team and individual training. On this microcredential, you’ll be empowered to become a confident and inspirational sports coach. Using the international coaching experience of business and elite sports coach, Paddy Upton, you’ll explore concepts from sports psychology, coaching, and leadership that can be applied to teams in a number of contexts. You’ll discover the value of using motivational strategies and insights to improve your sports leadership skills and become a more effective, successful coach.",
+    "imageCover": "nguyen-thu-hoai-v0H-vn0BixI-unsplash.jpg",
+    "images": ["nguyen-thu-hoai-v0H-vn0BixI-unsplash.jpg", "steven-lelham-atSaEOeE8Nk-unsplash.jpg", "tevarak-phanduang-eOvv4N6yNmk-unsplash.jpg"],
+    "topics": [
+        "Coaching in the knowledge area",
+        "Coaching the mental game",
+        "Being player-centred"
+    ],
+    "achievements": [
+        "Recognition of Prior Learning (RPL) at Postgraduate level from DCU",
+        "A Certificate of Completion from DCU"
+    ],
+    "teachers": [
+        "Paddy Upton",
+        "Kylie Bellesini"
+    ],
+    "startDates":["2020-05-10T09:00:00.000Z", "2020-09-04T09:00:00.000Z"],
+    "academy":{
+        "name": "Dublin City University",
+        "address": "DCU Dublin City University, Drumcondra, Dublin"   
+    },
+    "type":"sport" ,
+    "scheduleBasic": "4 hours per week",
+    "Scheduling":["Saturdays, 12:00pm – 4:00pm"],
+    "requirements": "TThere is no prerequisite requirement for this microcredential. However, it is designed for leaders looking to improve their ability to manage and lead teams, so an undergraduate degree or relevant professional experience is recommended.."
+}
+]

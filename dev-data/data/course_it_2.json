@@ -1,0 +1,46 @@
+{
+    "name": "Introduction to Web Development",
+    "slug": "introduction-to-web-development",
+    "duration": 3,
+    "maxGroupSize": 50,
+    "difficulty": "medium",
+    "ratingAverage": 4.0,
+    "price": 500,
+    "summary": "Discover web development and learn to build your own interactive websites using HTML, CSS, and JavaScript. Supported by Google.",
+    "description": "On this course, you’ll first build a website using HTML, style it with CSS, and then make it interactive using JavaScript. Along the way you’ll learn about the box model, which describes how websites are laid out by browsers, and about the Document Object Model, which your JavaScript code will interact with to dynamically change your web pages.",
+    "imageCover": "marvin-meyer-SYTO3xs06fU-unsplash.jpg",
+    "images": ["marvin-meyer-SYTO3xs06fU-unsplash.jpg", 
+        "fotis-fotopoulos-DuHKoV44prg-unsplash.jpg", 
+        "you-x-ventures-Oalh2MojUuk-unsplash.jpg"
+    ],
+    "topics": [
+        "HTML tags and attributes",
+        "Styling web pages using CSS",
+        "CSS classes and ids for styling web page elements",
+        "Layouts in CSS, including the box model and responsive design",
+        "Using JavaScript to make interactive web pages",
+        "The Document Object Model",
+        "Validation"
+    ],
+    "achievements": [
+        "Produce a HTML web page using suitable tags and attributes",
+        "Apply classes and ids to style a website",
+        "Demonstrate how to use the Document Object Model (DOM) to access an element of a web page",
+        "Explain the advantages of CSS compared to inline styling",
+        "Produce an interactive website using JavaScript"
+    ],
+    "teachers": [
+        "Ella Brady",
+        "Noah O'Connor",
+        "Matt Hogan"
+    ],
+    "startDates":["2020-05-01T09:00:00.000Z", "2020-07-24T09:00:00.000Z"],
+    "academy":{
+        "name": "Ballyfermot College of Further Education",
+        "address": "Kylemore Rd, Chapelizod, Ballyfermot, Co. Dublin"
+    },
+    "type":"it" ,
+    "scheduleBasic": "2 hours per week",
+    "Scheduling":["Tuesday, 6:00pm – 8:00pm"],
+    "requirements": "This course is designed for teachers delivering lessons at a GCSE level or equivalent, and for beginner programmers looking to start using HTML and JavaScript. To take this course, you need to be familiar with basic programming structures such as loops and if statements, but you don’t need any experience of HTML, CSS or JavaScript."
+}
