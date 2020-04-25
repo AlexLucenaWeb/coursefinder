@@ -1,0 +1,32 @@
+header
+  nav.navbar.navbar-expand-lg.navbar-light
+    a.navbar-brand.logo(href='/')
+      img.logo__icon(src='./images/logo.svg' alt='Course Finder logo')
+      span.logo__name Course Finder
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      .row.nav-menu.nav__menu
+        .col-12
+          ul.navbar-nav.ml-auto.nav__list
+            li.nav-item.nav__item
+              a.nav-link(href='/courses') Courses
+            li.nav-item.nav__item
+              a.nav-link.nav__link(href='/contact') Contact
+            //- li.nav-item.nav__item
+            //-   a.nav-link.nav__link(href='/bookins') My bookings 
+            //- li.nav-item.nav__item
+            //-   a.nav-link.nav__link(href='/user') Ania
+            li.nav-item.nav__item
+              a.nav-link.nav__link(href='/contact') Login
+            li.nav-item.nav__item
+              a.nav-link.nav__link(href='/contact') Sign Up
+        .col-12
+          .social
+            p.social__cta Visit us!
+            a(href='/')
+              i.fab.fa-facebook-f.social__icon
+            a(href='')
+              i.fab.fa-instagram.social__icon
+            a(href='#')
+              i.fab.fa-twitter.social__icon

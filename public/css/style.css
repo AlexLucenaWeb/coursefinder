@@ -31,7 +31,7 @@ breadcrumbs
   line-height: 1.5;
   font-family: 'Raleway', sans-serif;
   color: rgb(29, 33, 41);
-  background-color: rgba(245,248,249,1)!important;
+  background-color: rgba(245, 248, 249, 1) !important;
 }
 
 .bg--gray {
@@ -559,7 +559,6 @@ breadcrumbs
 /* .description {
   background-color: rgba(245, 248, 249, 1);
 } */
-
 .description__title {
   margin-bottom: 30px;
   font-family: 'Roboto Slab', serif;
@@ -949,7 +948,7 @@ breadcrumbs
 
   .social__cta {
     display: inline-block;
-    color:  rgba(245, 85, 54, 1);
+    color: rgba(245, 85, 54, 1);
     margin-right: 10px;
   }
 
