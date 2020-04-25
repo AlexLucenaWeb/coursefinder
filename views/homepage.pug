@@ -1,4 +1,189 @@
 extends skeleton
 
 block main
-  h1 Welcome home
+  main.hero.pb-5
+    .hero__top
+    .hero__bottom
+    .hero__content
+      h1.hero__title Course Finder
+      p.hero__line The future waits for you, take the first step with Course Finder.
+      a.btn.btn-primary.custom__btn.hero__btn(href='/courses') Check more!
+
+  .py-5
+    .container-fluid.conatiner--max
+      .row
+        h2.title.title--h2.col-12 Explore
+        .col-xs.col-md-6.col-xl-3.mb-4
+          .card
+            img.card-img-top(src='./images/4.jpg' alt='course')
+            .card-body.card__body
+              .card-head
+                h5.card-title.card__title Exploring Play: The Importance of Play in Everyday Life
+              p.card-text.card__text
+                | Understanding the nature and value of play through the course of our lives, across cultures and communities.
+              p.card-text.card__text
+                span
+                  i.fas.fa-graduation-cap.card__icon
+                  |  Trinity College
+                span
+                  i.fas.fa-tag.card__icon
+                  |  Psychology
+                span
+                  i.far.fa-clock
+                  |  2 weeks
+            .card__wrap-btn
+              a.btn.btn-primary.card__btn.custom__btn(href='#') Read more
+        .col-xs.col-md-6.col-xl-3.mb-4
+          .card
+            img.card-img-top(src='./images/3.jpg' alt='course')
+            .card-body.card__body
+              .card-head
+                h5.card-title Exploring Play: The Importance of Play in Everyday Life
+              p.card-text.card__text
+                | Understanding the nature and value of play through the course of our lives, across cultures and communities.
+              p.card-text.card__text
+                span
+                  i.fas.fa-graduation-cap.card__icon
+                  |  Trinity College
+                span
+                  i.fas.fa-tag.card__icon
+                  |  Psychology
+                span
+                  i.far.fa-clock.card__icon
+                  |  2 weeks
+            .card__wrap-btn
+              a.btn.btn-primary.card__btn.custom__btn(href='#') Read more
+        .col-xs.col-md-6.col-xl-3.mb-4
+          .card
+            img.card-img-top(src='./images/2.jpg' alt='course')
+            .card-body.card__body
+              .card-head
+                h5.card-title Exploring Play: The Importance of Play in Everyday Life
+              p.card-text.card__text
+                | Understanding the nature and value of play through the course of our lives, across cultures and communities.
+              p.card-text.card__text
+                span
+                  i.fas.fa-graduation-cap.card__icon
+                  |  Trinity College
+                span
+                  i.fas.fa-tag.card__icon
+                  |  Psychology
+                span
+                  i.far.fa-clock.card__icon
+                  |  2 weeks
+            .card__wrap-btn
+              a.btn.btn-primary.card__btn.custom__btn(href='#') Read more
+        .col-xs.col-md-6.col-xl-3.mb-4
+          .card
+            img.card-img-top(src='./images/1.jpg' alt='course')
+            .card-body.card__body
+              .card-head
+                h5.card-title Exploring Play: The Importance of Play in Everyday Life
+              p.card-text.card__text
+                | Understanding the nature and value of play through the course of our lives, across cultures and communities.
+              p.card-text.card__text
+                span
+                  i.fas.fa-graduation-cap.card__icon
+                  |  Trinity College
+                span
+                  i.fas.fa-tag.card__icon
+                  |  Psychology
+                span
+                  i.far.fa-clock.card__icon
+                  |  2 weeks
+            .card__wrap-btn
+              a.btn.btn-primary.card__btn.custom__btn(href='#') Read more
+        .col-12
+          a.btn.btn-primary.card__btn-main(href='/courses') Explore all courses!
+          
+  .steps
+    .container.steps__container
+      .row
+        .steps__block.steps__block--one
+          .col-12.col-lg-4
+            a.steps__link(href='/')
+              .steps__box
+                .steps__wrap-icon
+                  i.fas.fa-play.steps__icon.steps__icon--play
+                p.steps__text Choose course
+        .steps__arrow.steps__arrow--one
+        .steps__block.steps__block--two
+          .col-12.col-lg-4
+            a.steps__link(href='/')
+              .steps__box
+                .steps__wrap-icon
+                  i.fas.fa-user-plus.steps__icon
+                p.steps__text Sign up
+                .steps__triangle.steps__triangle--two
+        .steps__arrow.steps__arrow--two
+        .steps__block.steps__block--three
+          .col-12.col-lg-4
+            a.steps__link(href='/')
+              .steps__box
+                .steps__wrap-icon
+                  i.fas.fa-graduation-cap.steps__icon
+                p.steps__text Graduate
+                .steps__triangle.steps__triangle--three
+
+  .py-5
+    .container
+      .row
+        .col-12
+          .sub
+            h3.sub__title.mb-3 Why Course Finder?
+            p.sub__text
+              | Knowledge is a key to success and we are here to help you to get the best education. Discover what did we prepare for you!
+        .col-12.col-lg-4
+          .why
+            i.fas.fa-globe-africa.why__icon
+            h3.why__title International Environment
+            p.why__text
+              | Learn from the best specialists from every corner of the globe - they are here to help you get the knowledge&nbsp;you&nbsp;need.
+        .col-12.col-lg-4
+          .why
+            i.fab.fa-canadian-maple-leaf.why__icon
+            h3.why__title Vibrant Atmosphere 
+            p.why__text
+              | Studying doesn&apos;t have to be boring! Modern methods, interactive activities and interesting materials prepared for every student.
+        .col-12.col-lg-4
+          .why
+            i.fas.fa-people-carry.why__icon
+            h3.why__title Sense of Community
+            p.why__text
+              | We are here to teach you new things but also to help you use this knowledge in your career. You won&apos;t be alone on this journey, promise!
+        
+  .inspiration.bg--white
+    .container.py-5
+      .row
+        h2.col-12.title.title--h2 Get Inspired
+        .col-12.col-md-6.inspiration__content
+          img.inspiration__img(src='/images/study.svg' alt='study')
+          .inspiration__quote
+            blockquote
+              | You cannot open a book without learning something.
+            |             &horbar; Confucius
+          hr.inspiration__hr
+        .col-12.col-md-6.inspiration
+          img.inspiration__img(src='/images/study1.svg' alt='study')
+          .inspiration__quote
+            blockquote
+              | Learning never exhausts the mind.
+            |             &horbar; Leonardo da Vinci
+
+  .py-5
+    .container
+      .row
+        .col-12
+          .sub
+            h3.sub__title.mb-3 Who do we work with?
+            p.sub__text
+              | The best universities from all around the country in one place! You don&apos;t have to dig through every single website, we did it for you!
+        .col-12
+          .work
+            img.work__logo(src='/images/logo/maynooth.png' alt='maynooth')
+            img.work__logo(src='/images/logo/trinity.png' alt='trinity')
+            img.work__logo(src='/images/logo/dcu.png' alt='dcu')
+            img.work__logo(src='/images/logo/rcs.png' alt='rcs')
+            img.work__logo(src='/images/logo/dit.png' alt='dit')
+            img.work__logo(src='/images/logo/ucd.png' alt='ucd')
+            img.work__logo(src='/images/logo/ucc.png' alt='ucc')

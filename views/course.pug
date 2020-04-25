@@ -1,7 +1,7 @@
 extends skeleton
 
-mixin list(a)
-  h2= a
+mixin topics(a)
+  li.topics__element= a
 
 
 block main
@@ -16,7 +16,7 @@ block main
               li.breadcrumbs__list
                 a.breadcrumbs__link(href='/courses') Courses
               li.breadcrumbs__list
-                a.breadcrumbs__link(href='')
+                span.breadcrumbs__link= `${course.name}`
 
       .introduction.my-4
         .row
@@ -26,10 +26,6 @@ block main
           .col-12.col-lg-6
             .introduction__wrap-img.my-4
               img.introduction__img(src=`/images/courses/${course.imageCover}` alt=`${course.name}`)
-              
-              for x in course.teachers
-                +list(x)
-
 
   .digest.my-5
     .container
@@ -61,7 +57,7 @@ block main
           .digest__element
             i.fas.fa-money-bill.digest__icon
             |             Price:
-            span.digest__information= `&euro; ${course.price}`
+            span.digest__information= `€ ${course.price}`
             
   
   .bg--gray.py-4
@@ -103,7 +99,9 @@ block main
           span.category.badge Topics
           h3.topics__title What will you study about?
           ol.topics__list
-            
+            for x in course.topics
+              +topics(x)
+
             
   #details.details.bg--white.my-5
     .container.py-3

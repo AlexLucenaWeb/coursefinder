@@ -71,6 +71,10 @@ const courseSchema = new mongoose.Schema({
   },
   images: [String],
   teachers: [String],
+  topics: [String],
+  achievements: [String],
+  scheduleBasic: String,
+  language: String,
   createdAt: {
     type: Date,
     default: Date.now(),
