@@ -107,7 +107,7 @@ const courseSchema = new mongoose.Schema(
             type: String, 
             required: [true, 'A course must have a type'],
             enum:{
-                values: ['art', 'design', 'language', 'technology', 'sport'],
+                values: ['art', 'design', 'language', 'technology', 'sport', 'it'],
                 message: 'Type must be: art, design, language, technology, sport'
             }
         },

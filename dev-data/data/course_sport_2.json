@@ -1,0 +1,42 @@
+[ 
+    {
+    "name": "The Science of Endurance Training and Performance",
+    "slug": "endurance-training-and-performance",
+    "duration": 6,
+    "maxGroupSize": 20,
+    "difficulty": "easy",
+    "ratingAverage": 4.0,
+    "price": 500,
+    "summary": "Learn about the science behind endurance sports training and performance, including effective preparation and rehabilitation.",
+    "description": "Endurance sports such as cycling, marathons and triathlons are increasingly popular. Events attract everyone from elite athletes striving for performance improvements, to sedentary individuals looking to improve their health and well-being. Wherever you sit on this spectrum, this course will help you train for and improve your performance in endurance sports.",
+    "imageCover": "john-arano-h4i9G-de7Po-unsplash.jpg",
+    "images": ["john-arano-h4i9G-de7Po-unsplash.jpg", "meghan-holmes-wy_L8W0zcpI-unsplash.jpg", "alexander-redl-d3bYmnZ0ank-unsplash.jpg"],
+    "topics": [
+        "Training",
+        "Nutrition",
+        "Psychology",
+        "Fatigue and pain",
+        "Respiratory health",
+        "Endurance injuries and rehabilitation"
+    ],
+    "achievements": [
+        "Explore the science behind effective endurance training methods",
+        "Discuss psychological preparation for endurance sports",
+        "Explain how the concepts of fatigue and pain relate to endurance training",
+        "Explore injuries in endurance sport and how they can be treated and rehabilitated"
+    ],
+    "teachers": [
+        "Lucy Hale",
+        "Glen Davison"
+    ],
+    "startDates":["2020-05-25T09:00:00.000Z", "2020-09-24T09:00:00.000Z"],
+    "academy":{
+        "name": "The Open University",
+        "address": "2 Holles St, Saint Peter's, Dublin 2"   
+    },
+    "type":"sport" ,
+    "scheduleBasic": "4 hours per week",
+    "Scheduling":["Saturdays, 10:00am – 2:00pm"],
+    "requirements": "This course is designed for anyone with an interest in taking up an endurance sport or who is training for an endurance challenge ahead. It will also be relevant to athletes, coaches and sport scientists, as well as prospective sports science students."
+}
+]
