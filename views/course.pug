@@ -1,4 +1,127 @@
 extends skeleton
 
+mixin list(a)
+  h2= a
+
+
 block main
-  h1 Course
+  .hero.hero--without-img.bg--gray
+    .hero__top
+    .hero__bottom
+    .container
+      .breadcrumbs.my-4
+        .row
+          .col-12
+            ul.breadcrumbs__container
+              li.breadcrumbs__list
+                a.breadcrumbs__link(href='/courses') Courses
+              li.breadcrumbs__list
+                a.breadcrumbs__link(href='')
+
+      .introduction.my-4
+        .row
+          .col-12.col-lg-6
+            h1.introduction__title= `${course.name}`
+            p.introduction__text.mt-4.mb-2= `${course.summary}`
+          .col-12.col-lg-6
+            .introduction__wrap-img.my-4
+              img.introduction__img(src=`/images/courses/${course.imageCover}` alt=`${course.name}`)
+              
+              for x in course.teachers
+                +list(x)
+
+
+  .digest.my-5
+    .container
+      .row
+        .col-12
+          h6.digest__title Summary
+        .col-12.col-md-6
+          .digest__element
+            i.fas.fa-graduation-cap.digest__icon
+            |             University:
+            span.digest__information= `${course.academy.name}`
+          .digest__element
+            i.fas.fa-tag.digest__icon
+            |             Category:
+            span.digest__information= `${course.type}`
+          .digest__element
+            i.fas.fa-language.digest__icon
+            |             Language:
+            span.digest__information= `${course.language}`
+        .col-12.col-md-6
+          .digest__element
+            i.far.fa-clock.digest__icon
+            |             Duration:
+            span.digest__information= `${course.academy.name}`
+          .digest__element
+            i.far.fa-calendar-alt.digest__icon
+            |             Schedule:
+            span.digest__information= `${course.scheduleBasic}`
+          .digest__element
+            i.fas.fa-money-bill.digest__icon
+            |             Price:
+            span.digest__information= `&euro; ${course.price}`
+            
+  
+  .bg--gray.py-4
+    .container
+      .menu.my-5
+        .row
+          .col-12
+            ul.menu__list
+              li.menu__element
+                a.menu__link.menu__link--active(href='#resume')
+                  | Resume
+              li.menu__element
+                a.menu__link(href='#topics')
+                  | Topics
+              li.menu__element
+                a.menu__link(href='#details')
+                  | Details
+              li.menu__element
+                a.menu__link(href='#booking')
+                  | Booking
+                  
+  #resume.description.my-5
+    .container.py-5
+      .row
+        .col-12
+          .description__content
+            span.category.badge Resume
+            h2.description__title= `${course.name}`
+            p.description__text.my-4= `${course.description}`
+            .description__wrap-img.my-4.mt-5
+              img.description__img(src=`/images/courses/${course.images[1]}` alt=`${course.name}`)
+                
+    
+  #topics.bg--gray.topics.my-5
+  .container.py-5
+    .row
+      .col-12
+        .topics__content
+          span.category.badge Topics
+          h3.topics__title What will you study about?
+          ol.topics__list
+            
+            
+  #details.details.bg--white.my-5
+    .container.py-3
+      .row
+        .col-12
+          .details__content
+            span.category.badge Details
+            h3.details__title Let&apos;s look a bit closer
+            
+            
+  #booking.booking.bg--gray.mt-5
+    .container.py-5
+      .row
+        .col-12
+          .booking__content
+            span.category.badge Booking
+            h3.booking__title Let&apos;s find a place for you!
+
+
+
+

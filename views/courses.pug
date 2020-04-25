@@ -53,7 +53,7 @@ block main
 
         <div class="col-xs col-md-6 col-xl-4 mb-4">
           <div class="card">
-            <img src="./images/1.jpg" class="card-img-top" alt="course">
+            <img src="/images/1.jpg" class="card-img-top" alt="course">
             <div class="card-body card__body">
               <div class="card-head">
                 <h5 class="card-title card__title">Exploring Play: The Importance of Play in Everyday Life</h5>
@@ -92,4 +92,4 @@ block main
                     i.far.fa-clock.card__icon
                     = `${course.scheduleBasic}`
               .card__wrap-btn
-                a.btn.btn-primary.card__btn.custom__btn(href=`/courses/${course.slug}.`) Read more
+                a.btn.btn-primary.card__btn.custom__btn(href=`/courses/${course.slug}`) Read more
