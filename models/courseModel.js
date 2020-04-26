@@ -32,6 +32,7 @@ const courseSchema = new mongoose.Schema(
                 message: 'Difficulty must be either easy, medium or difficult'
             } 
         },
+        language : String,
         ratingAverage: {
             type: Number,
             default: 4.5, 
@@ -76,11 +77,14 @@ const courseSchema = new mongoose.Schema(
             default: Date.now(),
             select: false
         },
+        topics : [String],
+        achievements: [String],
         startDates: [Date],
         vipCourse: {
             type: Boolean,
             default: false
         },
+        teachers: [String],
         academy: {
             type : Object,
             name: {
@@ -107,11 +111,12 @@ const courseSchema = new mongoose.Schema(
             type: String, 
             required: [true, 'A course must have a type'],
             enum:{
-                values: ['art', 'design', 'language', 'technology', 'sport'],
-                message: 'Type must be: art, design, language, technology, sport'
+                values: ['art', 'design', 'language', 'technology', 'sport','IT'],
+                message: 'Type must be: art, design, language, technology, sport or IT'
             }
         },
-        Scheduling: {
+        scheduleBasic: String,
+        scheduling: {
             type: [String],
             required: [true, 'A course must have a Scheduling']
         },

@@ -1,0 +1,43 @@
+{
+    "name": "An Introduction to Coding and Design",
+    "slug": "an-introduction-to-coding-and-design",
+    "duration": 7,
+    "language": "English",
+    "maxGroupSize": 25,
+    "difficulty": "easy",
+    "price": 550,
+    "summary": "Ever wonder how apps and websites are made and designed? Do practical exercises to build your skills in coding, app design and UX.",
+    "description": "On this program, you’ll explore the technology and design behind websites and apps. Starting with the basic coding languages, you’ ll learn how programming works and have the chance to practice using block - based text(a simple approach to coding without using text).You’ ll also explore app design, good user experience practice, and have a go at designing your own app.Along the way, you’ ll hear from people who are also just starting out on their career journey, as well as from experts who’ ll share their experiences and tips about getting into the coding and design industries.",
+    "imageCover": "adi-goldstein-mDinBvq1Sfg-unsplash.jpg",
+    "images": ["adi-goldstein-mDinBvq1Sfg-unsplash.jpg", "kelly-sikkema-o2TRWThve_I-unsplash.jpg"],
+    "topics": [
+      "Key developments in computing",
+      "Explore what code can do",
+      "How programming works in real life",
+      "Writing basic code",
+      "Solving a more complex problem with code",
+      "Finding out what a development team does"
+    ],
+    "achievements": [
+      "Summarise key developments in the advent of computer technology.",
+      "Identify where algorithms are used in the real world.",
+      "Solve basic block-language programming exercises.",
+      "Discuss the roles and responsibilities involved in making software.",
+      "Solve more advanced block language exercises with expressive solutions.",
+      "Describe the features and advantages of text-based coding languages."
+    ],
+    "teachers": [
+      "Tom Hanks",
+      "Brad Pitt",
+      "George Orwell"
+    ],
+    "startDates": ["2020-05-23T09:00:00.000Z", "2020-06-24T09:00:00.000Z"],
+    "academy": {
+      "name": "Trinity College",
+      "address": "College Green, Dublin 2"
+    },
+    "type": "IT",
+    "scheduleBasic": "4 hours per week",
+    "scheduling": ["Saturdays, 10:00 – 4:00pm"],
+    "requirements": "This course starts at the very beginning with PhotoShop, Illustrator and InDesign. Applicants must have basic computer skills."
+  }

@@ -1,0 +1,46 @@
+{
+    "name": "Fine Art",
+    "slug": "fine-art",
+    "duration": 365,
+    "maxGroupSize": 20,
+    "difficulty": "medium",
+    "price": 1200,
+    "summary": "The MA Fine Art programme, run by the Dublin School of Creative Arts at DIT, offers a unique opportunity for focussed study in an interdisciplinary environment that mixes studio practice with intellectual and historical inquiry.",
+    "description": "The MA Fine Art is a twelve-month, full-time or twenty-four-month part-time programme divided between core modules, including Discourses in Contemporary Art and Design, Research Methods, and a Discipline-Specific Seminar Series, and modules designed to provide core and advanced studio skills. In the third semester, students deliver a final project in their specialisation. Fine Art students will benefit from state-of-the-art printing and 3-D workshops, off-campus Project Spaces, and individual on-campus studios during the third semester, when students will deliver their final project.",
+    "imageCover": "adobe-software-for-beginners-cover.png",
+    "images": [
+      "adobe-software-for-beginners3.jpg",
+      "adobe-software-for-beginners2.jpg",
+      "adobe-software-for-beginners1.jpg"
+    ],
+    "startDates": ["2020-09-01T09:00:00.000Z"],
+    "academy": {
+      "name": "Dublin Institute of Technology (DIT)",
+      "location": {
+        "type": "Point",
+        "coordinates": [53.34176, -6.25503]
+      },
+      "address": "DIT Grangegorman, Dublin 7"
+    },
+    "topics": [
+      "Cool Brushes",
+      "Cubism Rules!",
+      "Baroque in da house",
+      "What is a spray",
+      "The Van Gogh ear"
+    ],
+    "achievements": [
+      "S.",
+      "Identify where algorithms are used in the real world.",
+      "Solve basic block-language programming exercises.",
+      "Discuss the roles and responsibilities involved in making software.",
+      "Solve more advanced block language exercises with expressive solutions.",
+      "Describe the features and advantages of text-based coding languages."
+    ],
+    "teachers": ["Banski", "Picasso", "Rembrandt"],
+    "scheduleBasic": "25 hours per week",
+    "scheduling": ["Monday - Friday, 9:00am - 2:00pm "],
+    "type": "art",
+    "requirements": "Bachelor Degree (Honours 2.1 or above) in relevant disciplines."
+  }
+  

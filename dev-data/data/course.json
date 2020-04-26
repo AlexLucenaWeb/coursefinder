@@ -1,16 +1,15 @@
-[
+
     {
         "name": "Certificate in Adobe Software for begginers",
         "slug": "adobe-software-for-beginners",
         "duration": 49,
         "maxGroupSize": 25,
         "difficulty": "easy",
-        "ratingAverage": 4.5,
         "price": 550,
         "summary": "This course will teach you how to create illustrations and vectors in Adobe Illustrator, manipulate photographs in Adobe Photoshop and create compositions and layout in Adobe InDesign.",
         "description": "This course will teach you how to create illustrations and vectors in Adobe Illustrator, manipulate photographs in Adobe Photoshop and create compositions and layout in Adobe InDesign. The course is aimed at anyone looking to begin their digital media career, as well as current students who need to create visuals for their projects. We will go through the basics of each piece of software over the course of 7 Saturday workshops. You will build up your skills through a series of challenging creative tasks. You will benefit from guidance from highly experienced tutors along the way. You will also be tasked with completing a design project, in which you will create both digital files and print-ready files for output to print",
-        "imageCover": "adobe-for-beginners-cover.jpg",
-        "images": ["adobe-for-beginners-1.jpg", "adobe-for-beginners-2.jpg", "adobe-for-beginners-3.jpg"],
+        "imageCover": "adobe-software-for-beginners-cover.png",
+        "images": ["adobe-software-for-beginners-cover.jpg", "adobe-software-for-beginners-cover2.jpg", "adobe-software-for-beginners-cover3.jpg"],
         "startDates":["2020-05-23T09:00:00.000Z", "2020-06-24T09:00:00.000Z"],
         "academy":{
             "name": "Dublin Institute of Design",
@@ -20,31 +19,28 @@
             },
             "address": "45 Kildare St, Dublin 2, D02 EC61"   
         },
-        "type":"design" ,
-        "Scheduling":["Saturdays, 10:00 – 4:00pm"],
+        "topics": [
+            "Adobe Photoshop",
+            "Adobe Illustrator",
+            "Adobe Premier",
+            "Adobe Animate",
+            "Adobe Lightroom"
+        ],
+        "achievements": [
+            "Summarise key developments in the advent of computer technology.",
+            "Identify where algorithms are used in the real world.",
+            "Solve basic block-language programming exercises.",
+            "Discuss the roles and responsibilities involved in making software.",
+            "Solve more advanced block language exercises with expressive solutions.",
+            "Describe the features and advantages of text-based coding languages."
+        ],
+        "teachers": [
+            "Tom Hanks",
+            "Brad Pitt",
+            "George Orwell"
+        ],
+        "scheduleBasic": "6 hours per week",
+        "scheduling": ["Saturdays, 10:00 – 4:00pm"],
+        "type":"design",
         "requirements": "This course starts at the very beginning with PhotoShop, Illustrator and InDesign. Applicants must have basic computer skills."
-    },
-    {
-        "name": "Certificate in Adobe Software for begginers",
-        "slug": "adobe-software-for-beginners",
-        "duration": 49,
-        "maxGroupSize": 25,
-        "difficulty": "easy",
-        "ratingAverage": 4.5,
-        "price": 550,
-        "summary": "This course will teach you how to create illustrations and vectors in Adobe Illustrator, manipulate photographs in Adobe Photoshop and create compositions and layout in Adobe InDesign.",
-        "description": "This course will teach you how to create illustrations and vectors in Adobe Illustrator, manipulate photographs in Adobe Photoshop and create compositions and layout in Adobe InDesign. The course is aimed at anyone looking to begin their digital media career, as well as current students who need to create visuals for their projects. We will go through the basics of each piece of software over the course of 7 Saturday workshops. You will build up your skills through a series of challenging creative tasks. You will benefit from guidance from highly experienced tutors along the way. You will also be tasked with completing a design project, in which you will create both digital files and print-ready files for output to print",
-        "imageCover": "adobe-for-beginners-cover.jpg",
-        "images": ["adobe-for-beginners-1.jpg", "adobe-for-beginners-2.jpg", "adobe-for-beginners-3.jpg"],
-        "startDates":["2020-05-23T09:00:00.000Z", "2020-06-24T09:00:00.000Z"],
-        "academy":{
-            "name": "Dublin Institute of Design",
-            "location": {
-                "type": "Point",
-                "coordinates": [53.341760, -6.255030]
-            },
-            "address": "45 Kildare St, Dublin 2, D02 EC61"   
-        },
-        "type":"design" 
     }
-]

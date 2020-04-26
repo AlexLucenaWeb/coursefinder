@@ -1,0 +1,45 @@
+
+    {
+        "name": "Certificate in visual merchandising",
+        "slug": "certificate-in-visual-merchandising",
+        "duration": 45,
+        "maxGroupSize": 25,
+        "difficulty": "easy",
+        "price": 695,
+        "summary": "During this course you will learn the theory and core skills of visual merchandising, gain practical competence in retail display, as well as an understanding of brand image and consumer behaviour in a store context.",
+        "description": "Merchandising is an integral part of every retail business and its importance to the sector continues to grow. The presentation of products and space management are key factors in the success of any store. This course will prepare graduates for a career as Visual Merchandisers and Retail Display Designers. In this course, you will learn from an experienced visual merchandiser who has worked in a wide range of industry positions. You will learn how to develop original ideas for window displays and instore displays, how to research visual merchandising trends, and how to present your ideas to colleagues and clients. You will also learn how to dress mannequins, and use lighting, fixtures and fittings, colour and product grouping to create impressive displays. The course is ideal if you are exploring the possibility of a career change, or if you are already working in the retail sector and wish to add visual merchandising to your skill set. Our part-time studying options allow you to study while working full-time. This course is delivered online, led by an practicing visual merchandiser with many years of experience.",
+        "imageCover": "certificate-in-visual-merchandising-cover.jpg",
+        "images": ["certificate-in-visual-merchandising2.jpg", "certificate-in-visual-merchandising1.jpg", "certificate-in-visual-merchandising3.jpg"],
+        "startDates":["2020-06-12T09:00:00.000Z", "2020-07-18T09:00:00.000Z"],
+        "academy":{
+            "name": "Dublin Institute of Design",
+            "location": {
+                "type": "Point",
+                "coordinates": [53.341760, -6.255030]
+            },
+            "address": "45 Kildare St, Dublin 2, D02 EC61"   
+        },
+        "topics": [
+            "The role of the Visual Merchandiser within the Retail System",
+            "Fundamentals of Visual Merchandising",
+            "Fixtures and Fittings: how to suit them to the product; custom built or ready made",
+            "Mannequins: suitability; how to dress them",
+            "Use of Props: where to get props; how to use them",
+            "Graphics: as a prop/visual aid; as information"
+        ],
+        "achievements": [
+            "Field Trip – Visit to Big and Small Retail Stores.",
+            "Field Trip Assessment.",
+            "Personal Project and Class Presentation.",
+            "Final Assessment and Certification."
+        ],
+        "teachers": [
+            "Bill Gates",
+            "Ironman",
+            "Marge Simpsons"
+        ],
+        "scheduleBasic": "6 hours per week",
+        "scheduling": ["Tuesdays and Thursdays, 6:00pm – 9:00pm"],
+        "type":"design",
+        "requirements": "This course starts at the very beginning, no requirementsneeded."
+    }
