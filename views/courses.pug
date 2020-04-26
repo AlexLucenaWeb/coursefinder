@@ -1,96 +1,72 @@
 extends skeleton
 
 block main
-  <div class="bg--white">
-    <div class="container pt-4 pb-2">
-      <div class="row">
-        <div class="col-12">
-          <div class="sub">
-            <h1 class="sub__title mb-3">Amazing courses for you</h1>
-            <p class="sub__text">Discover fascinating courses from all around Ireland</p>
-            <img class="sub__img" src="./images/gift.svg" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  .bg--gray
+    .container.pt-4.pb-2
+      .row
+        .col-12
+          .sub
+            h1.sub__title.mb-3 Amazing courses for you
+            p.sub__text Discover fascinating courses from all around Ireland
+            img.sub__img(src='./images/gift.svg' alt='')
+
               
-  <div class="hero hero--without-img">
-    <div class="hero__top">
-    </div>
-    <div class="hero__bottom">
-    </div>
-    <div class="container-fluid conatiner--max py-4">
-      <div class="row">
-        <h2 class="title col-12 title--h2 pt-3">April Trending</h2>
-        <div class="col-xs col-md-6 col-xl-4 mb-4">
-          <div class="card">
-            <img src="./images/4.jpg" class="card-img-top" alt="course">
-            <div class="card-body card__body">
-              <div class="card-head">
-                <h5 class="card-title card__title">Exploring Play: The Importance of Play in Everyday Life</h5>
-              </div>
-            </div>
-            <div class="card__wrap-btn">
-              <a href="#" class="btn btn-primary card__btn custom__btn custom__btn--purple">Read more</a>
-            </div>
-          </div>
-        </div>
+  .hero.hero--without-img.bg--white
+    .hero__top
+    .hero__bottom
+    .container-fluid.conatiner--max.py-4
+      .row
+        h2.title.col-12.title--h2.pt-3 April Trending
+        .col-xs.col-md-6.col-xl-4.mb-4
+          .card
+            img.card-img-top(src='./images/4.jpg' alt='course')
+            .card-body.card__body
+              .card-head
+                h5.card-title.card__title Exploring Play: The Importance of Play in Everyday Life
+            .card__wrap-btn
+              a.btn.btn-primary.card__btn.custom__btn.custom__btn--purple(href='#') Read more
+        .col-xs.col-md-6.col-xl-4.mb-4
+          .card
+            img.card-img-top(src='./images/3.jpg' alt='course')
+            .card-body.card__body
+              .card-head
+                h5.card-title.card__title Exploring Play: The Importance of Play in Everyday Life
+            .card__wrap-btn
+              a.btn.btn-primary.card__btn.custom__btn.custom__btn--purple(href='#') Read more
+        .col-xs.col-md-6.col-xl-4.mb-4
+          .card
+            img.card-img-top(src='/images/1.jpg' alt='course')
+            .card-body.card__body
+              .card-head
+                h5.card-title.card__title Exploring Play: The Importance of Play in Everyday Life
+            .card__wrap-btn
+              a.btn.btn-primary.card__btn.custom__btn.custom__btn--purple(href='#') Read more
 
-        <div class="col-xs col-md-6 col-xl-4 mb-4">
-          <div class="card">
-            <img src="./images/3.jpg" class="card-img-top" alt="course">
-            <div class="card-body card__body">
-              <div class="card-head">
-                <h5 class="card-title card__title">Exploring Play: The Importance of Play in Everyday Life</h5>
-              </div>
-            </div>
-            <div class="card__wrap-btn">
-              <a href="#" class="btn btn-primary card__btn custom__btn custom__btn--purple">Read more</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xs col-md-6 col-xl-4 mb-4">
-          <div class="card">
-            <img src="./images/1.jpg" class="card-img-top" alt="course">
-            <div class="card-body card__body">
-              <div class="card-head">
-                <h5 class="card-title card__title">Exploring Play: The Importance of Play in Everyday Life</h5>
-              </div>
-            </div>
-            <div class="card__wrap-btn">
-              <a href="#" class="btn btn-primary card__btn custom__btn custom__btn--purple">Read more</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  .bg--white
+  .bg--gray
     .container-fluid.conatiner--max.py-5
       .row
         h2.title.col-12.title--h2 All Courses
         
         each course in courses
-          .col-xs.col-md-6.col-xl-3.mb-4
+          .col-xs.col-md-6.col-xl-3.my-5
             .card
-              img.card-img-top(src='./images/2.jpg' alt='course')
+              img.card-img-top(src=`./images/courses/${course.imageCover}` alt=`${course.name}`)
               .card-body.card__body
                 .card-head
-                  h5.card-title.card__title Exploring Play: The Importance of Play in Everyday Life
-                p.card__text
-                  | Understanding the nature and value of play through the course of our lives, across cultures and communities.
+                  h5.card-title.card__title= course.name
+                p.card__text= course.summary
                 p.card__text
                   span
                     i.fas.fa-graduation-cap.card__icon
-                    |  Trinity College
+                    = `${course.academy.nameAbbr}`
                   span
-                    i.fas.fa-tag.card__icon
-                    |  Psychology
+                    i.fas.fa-tag.card__icon 
+                    = `${course.type}`
                   span
                     i.far.fa-clock.card__icon
-                    |  2 weeks
+                    = `${course.duration} weeks`
               .card__wrap-btn
-                a.btn.btn-primary.card__btn.custom__btn(href='#') Read more
+                a.btn.btn-primary.card__btn.custom__btn(href=`/courses/${course.slug}`) Read more
+
+
+            

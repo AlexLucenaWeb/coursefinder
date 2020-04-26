@@ -1,5 +1,6 @@
 const Course = require('../models/courseModel');
 const catchAsync = require('../utils/catchAsync');
+const AppError = require('../utils/appError');
 
 exports.getHomePage = (req, res) => {
   res.status(200).render('homepage', {
@@ -9,21 +10,37 @@ exports.getHomePage = (req, res) => {
 
 exports.getCourses = catchAsync(async(req, res, next) => {
   const courses = await Course.find();
-
   res.status(200).render('courses', {
-    title: "All Courses <3",
+    title: "Courses",
     courses: courses
   });
 });
 
-exports.getCourse = (req, res) => {
+exports.getCourse = catchAsync(async (req, res, next) => {
+  const course = await Course.findOne({ slug: req.params.slug }).populate({
+    path: 'reviews',
+    fields: 'review rating user'
+  });
+
+  //catch error
+  if (!course) {
+    return next(new AppError('There is no course with that name.', 404));
+  }
+
   res.status(200).render('course', {
-    title: "Course"
+    title: `${course.name} Tour`,
+    course
+  });
+});
+
+exports.getContact = (req, res, next) => {
+  res.status(200).render('contact', {
+    title: "Contact"
   });
 };
 
-exports.getContact = (req, res) => {
-  res.status(200).render('contact', {
-    title: "Contact"
+exports.getLogin = (req, res, next) => {
+  res.status(200).render('login', {
+    title: "Login"
   });
 };
