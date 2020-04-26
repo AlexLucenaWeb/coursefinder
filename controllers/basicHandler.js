@@ -50,12 +50,12 @@ exports.getOne = (Model, popOptions) =>  catchAsync(async (req, res, next) => {
     const document = await query;
 
     if (!document) {
-        return next(new AppError('No tour document with that ID', 404));
+        return next(new AppError('No course with that ID', 404));
     }
-    
+
     res.status(200).json({
         status : 'success',
-        data : { 
+        data : {
             data: document
         }
     });
@@ -74,13 +74,13 @@ exports.getAll = Model => catchAsync(async (req, res, next) =>{
         .limitFields()
         .paginate();
     const document = await features.query;
-    
+
     //Send response:
     res.status(200).json({
         status : 'success',
         result : document.length,
-        data : { 
+        data : {
             data : document
         }
-    });   
+    });
 });;

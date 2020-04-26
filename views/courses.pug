@@ -23,8 +23,8 @@ block main
               .card-body.card__body
                 .card-head
                   h5.card-title.card__title= course.name
-                p.card__text= course.summary
-                p.card__text
+                p.card__text#card-text= course.summary
+                p.card__text#card-icons
                   span
                     i.fas.fa-graduation-cap.card__icon
                     = `${course.academy.nameAbbr}`

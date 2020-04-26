@@ -2,13 +2,6 @@ $(document).ready(function() {
 
   setTimeout(
     function() {
-      $('.card').matchHeight({
-        byRow: true,
-        property: 'height',
-        target: null,
-        remove: false
-      });
-
       $('.card-img-top').matchHeight({
         byRow: true,
         property: 'height',
@@ -16,14 +9,21 @@ $(document).ready(function() {
         remove: false
       });
 
-      $('.card-title').matchHeight({
+      $('.card__title').matchHeight({
         byRow: true,
         property: 'height',
         target: null,
         remove: false
       });
 
-      $('.card-text').matchHeight({
+      $('#card-text').matchHeight({
+        byRow: true,
+        property: 'height',
+        target: null,
+        remove: false
+      });
+
+      $('#card-icons').matchHeight({
         byRow: true,
         property: 'height',
         target: null,
@@ -51,7 +51,14 @@ $(document).ready(function() {
         remove: false
       });
 
-    }, 1000);
+      $('.card').matchHeight({
+        byRow: true,
+        property: 'height',
+        target: null,
+        remove: false
+      });
+
+    }, 1500);
 
 
 });
