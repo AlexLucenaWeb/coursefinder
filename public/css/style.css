@@ -772,7 +772,7 @@ breadcrumbs
 
 .welcome__social:hover {
   text-decoration: none;
-  color: rgba(180, 58, 119, 1);
+  color: rgba(245, 85, 54, 1);
 }
 
 .small__header {
@@ -787,6 +787,18 @@ breadcrumbs
 .login{
   max-width: 60%;
   margin: 50px auto;
+}
+
+.login__btn{
+  display: block;
+  margin: 20px auto;
+  width: 80%;
+}
+
+.login__msg {
+  font-weight: bolder;
+  text-align: center;
+  color: rgba(245, 85, 54, 1);
 }
 
 /* END login */

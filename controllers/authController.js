@@ -1,7 +1,5 @@
 const crypto = require('crypto');
-const {
-  promisify
-} = require('util');
+const { promisify } = require('util');
 const jwt = require('jsonwebtoken');
 const User = require('./../models/userModel');
 const catchAsync = require('./../utils/catchAsync');
@@ -182,7 +180,6 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
     validateBeforeSave: false
   });
 
-
   //3. return as an email
   const resetURL = `${req.protocol}://${req.get('host')}/api/v1/users/resetPassword/${resetToken}`;
 
@@ -204,10 +201,8 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
     await user.save({
       validateBeforeSave: false
     });
-
     return next(new AppError('There was an error! Please try again later.'), 500)
   }
-
 });
 
 exports.resetPassword = catchAsync(async (req, res, next) => {

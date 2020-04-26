@@ -8373,8 +8373,11 @@ Object.defineProperty(exports, "__esModule", {
 exports.showAlert = exports.hideAlert = void 0;
 
 var hideAlert = function hideAlert() {
-  var el = document.querySelector('.alert');
-  if (el) el.parentElement.removeChild(el);
+  var el = document.querySelector('.login__alert');
+
+  if (el) {
+    el.parentElement.removeChild(el);
+  }
 }; // type is 'success' or 'error'
 
 
@@ -8382,9 +8385,8 @@ exports.hideAlert = hideAlert;
 
 var showAlert = function showAlert(type, msg) {
   hideAlert();
-  var markup = "<div class=\"alert alert--".concat(type, "\">").concat(msg, "</div>");
-  document.querySelector('body').insertAdjacentHTML('afterbegin', markup);
-  window.setTimeout(hideAlert, 5000);
+  var markup = document.querySelector('#login__msg');
+  markup.innerHTML = msg;
 };
 
 exports.showAlert = showAlert;

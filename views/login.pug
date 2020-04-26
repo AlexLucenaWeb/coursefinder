@@ -5,7 +5,7 @@ block main
     .row
       .col-12
         .login
-          h2 Log into your account
+          h2.text-center.mb-4 Log in
           form.form#form
             .form-group
               label.form__label(for='email') Email address
@@ -14,4 +14,6 @@ block main
               label.form__label(for='password') Password
               input#password.form-control(type='password', required, maxlength='25',minlength='8')
             .form__group
-              button.custom__btn Login
+              button.custom__btn.login__btn Login
+        
+        .login__msg#login__msg  &nbsp;
