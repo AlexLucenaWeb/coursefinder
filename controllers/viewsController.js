@@ -3,11 +3,13 @@ const User = require('../models/userModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 
-exports.getHomePage = (req, res) => {
+exports.getHomePage = catchAsync(async(req, res, next) => {
+  const courses = await Course.find();
   res.status(200).render('homepage', {
-    title: "Home"
+    title: "Home",
+    courses: courses
   });
-}
+});
 
 exports.getCourses = catchAsync(async (req, res, next) => {
   const courses = await Course.find();

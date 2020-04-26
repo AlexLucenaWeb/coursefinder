@@ -8,94 +8,36 @@ block main
       h1.hero__title Course Finder
       p.hero__line The future waits for you, take the first step with Course Finder.
       a.btn.btn-primary.custom__btn.hero__btn(href='/courses') Check more!
-
+                  
   .py-5
     .container-fluid.conatiner--max
       .row
         h2.title.title--h2.col-12 Explore
-        .col-xs.col-md-6.col-xl-3.mb-4
-          .card
-            img.card-img-top(src='./images/4.jpg' alt='course')
-            .card-body.card__body
-              .card-head
-                h5.card-title.card__title Exploring Play: The Importance of Play in Everyday Life
-              p.card-text.card__text
-                | Understanding the nature and value of play through the course of our lives, across cultures and communities.
-              p.card-text.card__text
-                span
-                  i.fas.fa-graduation-cap.card__icon
-                  |  Trinity College
-                span
-                  i.fas.fa-tag.card__icon
-                  |  Psychology
-                span
-                  i.far.fa-clock
-                  |  2 weeks
-            .card__wrap-btn
-              a.btn.btn-primary.card__btn.custom__btn(href='#') Read more
-        .col-xs.col-md-6.col-xl-3.mb-4
-          .card
-            img.card-img-top(src='./images/3.jpg' alt='course')
-            .card-body.card__body
-              .card-head
-                h5.card-title Exploring Play: The Importance of Play in Everyday Life
-              p.card-text.card__text
-                | Understanding the nature and value of play through the course of our lives, across cultures and communities.
-              p.card-text.card__text
-                span
-                  i.fas.fa-graduation-cap.card__icon
-                  |  Trinity College
-                span
-                  i.fas.fa-tag.card__icon
-                  |  Psychology
-                span
-                  i.far.fa-clock.card__icon
-                  |  2 weeks
-            .card__wrap-btn
-              a.btn.btn-primary.card__btn.custom__btn(href='#') Read more
-        .col-xs.col-md-6.col-xl-3.mb-4
-          .card
-            img.card-img-top(src='./images/2.jpg' alt='course')
-            .card-body.card__body
-              .card-head
-                h5.card-title Exploring Play: The Importance of Play in Everyday Life
-              p.card-text.card__text
-                | Understanding the nature and value of play through the course of our lives, across cultures and communities.
-              p.card-text.card__text
-                span
-                  i.fas.fa-graduation-cap.card__icon
-                  |  Trinity College
-                span
-                  i.fas.fa-tag.card__icon
-                  |  Psychology
-                span
-                  i.far.fa-clock.card__icon
-                  |  2 weeks
-            .card__wrap-btn
-              a.btn.btn-primary.card__btn.custom__btn(href='#') Read more
-        .col-xs.col-md-6.col-xl-3.mb-4
-          .card
-            img.card-img-top(src='./images/1.jpg' alt='course')
-            .card-body.card__body
-              .card-head
-                h5.card-title Exploring Play: The Importance of Play in Everyday Life
-              p.card-text.card__text
-                | Understanding the nature and value of play through the course of our lives, across cultures and communities.
-              p.card-text.card__text
-                span
-                  i.fas.fa-graduation-cap.card__icon
-                  |  Trinity College
-                span
-                  i.fas.fa-tag.card__icon
-                  |  Psychology
-                span
-                  i.far.fa-clock.card__icon
-                  |  2 weeks
-            .card__wrap-btn
-              a.btn.btn-primary.card__btn.custom__btn(href='#') Read more
+        each course in courses.slice(0,4)
+          .col-xs.col-md-6.col-xl-3.mb-4
+            .card
+              img.card-img-top(src=`./images/courses/${course.imageCover}` alt=`${course.name}`)
+              .card-body.card__body
+                .card-head
+                  h5.card-title.card__title= course.name
+                p.card__text= course.summary
+                p.card__text
+                  span
+                    i.fas.fa-graduation-cap.card__icon
+                    = `${course.academy.nameAbbr}`
+                  span
+                    i.fas.fa-tag.card__icon 
+                    = `${course.type}`
+                  span
+                    i.far.fa-clock.card__icon
+                    = `${course.duration} weeks`
+              .card__wrap-btn
+                a.btn.btn-primary.card__btn.custom__btn(href=`/courses/${course.slug}`) Read more
+                
         .col-12
           a.btn.btn-primary.card__btn-main(href='/courses') Explore all courses!
           
+              
   .steps
     .container.steps__container
       .row
