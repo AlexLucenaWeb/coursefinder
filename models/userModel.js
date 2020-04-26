@@ -1,4 +1,4 @@
-const crypto = require('crypto'); 
+const crypto = require('crypto');
 const mongoose = require ('mongoose');
 const validator = require ('validator');
 const bcrypt = require('bcryptjs');
@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
         required: [true, 'you must confirm your password!'],
         validate: {
             validator: function(el) {
-                return el === this.password; 
+                return el === this.password;
             },
             message:'Passwords do no match!'
         }
@@ -52,7 +52,7 @@ userSchema.pre('save', function(next){
 
     this.passwordChangedAt = Date.now() - 1000;
     next();
-}); 
+});
 
 userSchema.pre('save', async function(next) {
     //If password was modified
@@ -72,7 +72,7 @@ userSchema.pre(/^find/, function(next) {
 })
 
 userSchema.methods.correctPassword = async function(
-    candidatePassword, 
+    candidatePassword,
     userPassword
     ) {
     return await bcrypt.compare(candidatePassword, userPassword);
@@ -85,7 +85,7 @@ userSchema.methods.changedPasswordAfter = function(JWTTimestamp) {
         console.log(changedTimestamp, JWTTimestamp);
         return JWTTimestamp < changedTimestamp;
     }
-    
+
     // False means not changed
     return false;
 }
@@ -100,7 +100,7 @@ this.passwordResetToken = crypto
 
 console.log({resetToken}, this.passwordResetToken);
 
-this.passwordResetExpires = Date.now() + 10 * 60 * 1000; 
+this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
 
 return resetToken;
 }
