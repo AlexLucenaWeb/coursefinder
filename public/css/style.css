@@ -112,7 +112,7 @@ breadcrumbs
 
 .nav__link {
   cursor: pointer;
-  display: inline; 
+  display: inline;
 }
 
 .nav__link:hover {
@@ -186,6 +186,7 @@ breadcrumbs
 .footer__link {
   color: #fff;
   padding: 10px;
+  display: block;
 }
 
 .footer__link:hover {
