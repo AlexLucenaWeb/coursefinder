@@ -10,7 +10,7 @@
 ### Clone the repository
 
 ```shell
-https://github.com/janoweb/coursefinder.git
+git clone https://github.com/janoweb/coursefinder.git
 cd coursefinder
 ```
 
