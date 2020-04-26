@@ -25,16 +25,16 @@ const courseSchema = new mongoose.Schema(
             required: [true, 'A course must have a grup size']
         },
         difficulty: {
-            type: String, 
+            type: String,
             required: [true, 'A course must have a difficulty'],
             enum:{
                 values: ['easy', 'medium', 'difficult'],
                 message: 'Difficulty must be either easy, medium or difficult'
-            } 
+            }
         },
         ratingAverage: {
             type: Number,
-            default: 4.5, 
+            default: 4.5,
             min: [1, 'Rating must be above 1'],
             max: [5, 'Rating must be below 5'],
             set: value => Math.round(value * 10 ) / 10
@@ -90,7 +90,7 @@ const courseSchema = new mongoose.Schema(
                 trim: true,
                 maxlength: [40, 'The course name is too long'],
                 minlength: [5, 'The course name is too short']
-            }, 
+            },
             location: {
                 //GeoJSON:
                 type: {
@@ -105,10 +105,11 @@ const courseSchema = new mongoose.Schema(
         },
         teachers: [String],
         language: String,
+        nameAbbr: String,
         topics: [String],
         achievements: [String],
         type: {
-            type: String, 
+            type: String,
             required: [true, 'A course must have a type'],
             enum:{
                 values: ['art', 'design', 'language', 'technology', 'sport', 'IT'],
@@ -121,7 +122,7 @@ const courseSchema = new mongoose.Schema(
             required: [true, 'A course must have a Scheduling']
         },
         requirements: String
-    }, 
+    },
     {
         toJSON: {virtuals: true},
         toObject: {virtuals: true},
@@ -135,16 +136,16 @@ courseSchema.index({slug: 1});
 courseSchema.index({type: 1});
 
 
-//Virtual properties: 
+//Virtual properties:
 courseSchema.virtual('durationWeeks').get(function(){
     return this.duration / 7;
 });
 
 // //virtual populate (reviews):
 courseSchema.virtual('reviews', {
-    ref: 'Review', 
+    ref: 'Review',
     foreignField:'course', //The course field in the review model
-    localField: '_id' //The course in this model that is the same that the foreingfield 
+    localField: '_id' //The course in this model that is the same that the foreingfield
 });
 
 //MONGOOSE MIDDLEWARE:
