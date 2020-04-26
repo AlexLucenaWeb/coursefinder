@@ -1,5 +1,5 @@
 const catchAsync = require('./../utils/catchAsync');
-const AppError = require('./../utils/apperror');
+const AppError = require('./../utils/appError');
 const APIFeatures = require('./../utils/apiFeatures');
 
 // Errors catch by catchAsync, error handler and  error class
