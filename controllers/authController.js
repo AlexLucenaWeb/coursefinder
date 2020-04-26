@@ -12,7 +12,7 @@ const signToken = id => {
   }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN
   });
-}
+};
 
 const createSendToken = (user, statusCode, res) => {
   const token = signToken(user._id);
@@ -33,7 +33,7 @@ const createSendToken = (user, statusCode, res) => {
     data: {
       user
     }
-  })
+  });
 }
 
 exports.signup = catchAsync(async (req, res, next) => {

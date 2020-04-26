@@ -11,7 +11,6 @@ router.get('/contact', authController.isLoggedIn, viewsController.getContact);
 router.get('/login', authController.isLoggedIn, viewsController.getLogin);
 router.get('/user', authController.protect, viewsController.getUser);
 
-
 router.post('/submit-user', authController.protect, viewsController.updateUser);
 
 module.exports = router;
