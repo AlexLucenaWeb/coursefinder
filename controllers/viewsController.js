@@ -33,8 +33,14 @@ exports.getCourse = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getContact = (req, res) => {
+exports.getContact = (req, res, next) => {
   res.status(200).render('contact', {
     title: "Contact"
+  });
+};
+
+exports.getLogin = (req, res, next) => {
+  res.status(200).render('login', {
+    title: "Login"
   });
 };

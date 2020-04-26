@@ -56,6 +56,8 @@ breadcrumbs
   background-color: rgba(245, 85, 54, 1);
   border: none;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  color: rgba(255,255,255,1);
+  border-radius: 5px;
 }
 
 .custom__btn--purple {
@@ -93,6 +95,8 @@ breadcrumbs
 
 .title--h2 {
   font-size: 3rem;
+  font-family: 'Roboto Slab', serif;
+  color: rgba(29, 33, 41,1);
 }
 
 /* END titles */
@@ -777,6 +781,15 @@ breadcrumbs
   margin-right: 5px;
   display: inline-block;
 }
+
+
+/* START login */
+.login{
+  max-width: 60%;
+  margin: 50px auto;
+}
+
+/* END login */
 
 /* END welcome */
 /* Small devices (landscape phones, 576px and up) */

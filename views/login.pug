@@ -1,0 +1,17 @@
+extends skeleton
+
+block main
+  .container.py-5
+    .row
+      .col-12
+        .login
+          h2 Log into your account
+          form.form.form--login
+            .form-group
+              label.form__label(for='email') Email address
+              input#email.form-control(type='email', required)
+            .form__group.ma-bt-md
+              label.form__label(for='password') Password
+              input#password.form-control(type='password', required, maxlength='25',minlength='8')
+            .form__group
+              button.custom__btn Login

@@ -13,14 +13,17 @@ header
               a.nav-link(href='/courses') Courses
             li.nav-item.nav__item
               a.nav-link.nav__link(href='/contact') Contact
-            //- li.nav-item.nav__item
-            //-   a.nav-link.nav__link(href='/bookins') My bookings 
-            //- li.nav-item.nav__item
-            //-   a.nav-link.nav__link(href='/user') Ania
-            li.nav-item.nav__item
-              a.nav-link.nav__link(href='/contact') Login
-            li.nav-item.nav__item
-              a.nav-link.nav__link(href='/contact') Sign Up
+            if user
+              li.nav-item.nav__item
+                a.nav-link.nav__link(href='/user')= user.name
+              li.nav-item.nav__item
+                a.nav-link.nav__link(href='/') Logout 
+            else
+              li.nav-item.nav__item
+                a.nav-link.nav__link(href='/login') Login
+              li.nav-item.nav__item
+                a.nav-link.nav__link(href='/signup') Sign Up
+      
         .col-12
           .social
             p.social__cta Visit us!
