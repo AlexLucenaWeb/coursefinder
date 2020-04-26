@@ -1,0 +1,11 @@
+extends skeleton
+
+block main
+  .container
+    .row
+      .col-12
+        .error.py-5
+          h1.error__title.text-center Sorry, we couldn't find this page! 
+          p.error__text.text-center= msg
+          .error__img-wrap.my-5
+            img.error__img(src='/images/undraw_cancel_u1it.svg' alt='Error image')

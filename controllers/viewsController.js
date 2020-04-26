@@ -24,11 +24,11 @@ exports.getCourse = catchAsync(async (req, res, next) => {
 
   //catch error
   if (!course) {
-    return next(new AppError('There is no course with that name.', 404));
+    return next(new AppError('There is no course with such a name.', 404));
   }
 
   res.status(200).render('course', {
-    title: `${course.name} Tour`,
+    title: `${course.name}`,
     course
   });
 });

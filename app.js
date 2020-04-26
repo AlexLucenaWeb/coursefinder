@@ -70,7 +70,6 @@ app.use(hpp({
 //test middleware
 app.use((req, res, next) => {
     req.requestTime = new Date().toISOString();
-    console.log(req.cookies);
     next();
 });
 
@@ -84,7 +83,7 @@ app.use('/api/v1/reviews', reviewRouter);
 
 //ERR: Not define route:
 app.all('*',(req, res, next) =>{
-    next(new AppError(`Can´t find ${req.originalUrl} on this server!`, 404));
+    next(new AppError(`Can´t find this page on this server!`, 404));
 });
 
 //Error handling middlwr

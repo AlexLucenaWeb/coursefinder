@@ -35,7 +35,7 @@ breadcrumbs
 }
 
 .bg--white {
-  background-color: rgba(245,248,249,1);
+  background-color: rgba(245, 248, 249, 1);
 }
 
 .bg--gray {
@@ -56,7 +56,7 @@ breadcrumbs
   background-color: rgba(245, 85, 54, 1);
   border: none;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
   border-radius: 5px;
 }
 
@@ -96,7 +96,7 @@ breadcrumbs
 .title--h2 {
   font-size: 3rem;
   font-family: 'Roboto Slab', serif;
-  color: rgba(29, 33, 41,1);
+  color: rgba(29, 33, 41, 1);
 }
 
 /* END titles */
@@ -297,7 +297,7 @@ breadcrumbs
 }
 
 .breadcrumbs__list:first-of-type .breadcrumbs__link:hover {
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
   font-weight: bolder;
   text-decoration: none;
 }
@@ -464,7 +464,7 @@ breadcrumbs
 }
 
 .steps__link:hover {
-  text-decoration: none!important;
+  text-decoration: none !important;
 }
 
 /* END steps */
@@ -775,6 +775,7 @@ breadcrumbs
   color: rgba(245, 85, 54, 1);
 }
 
+/* END welcome */
 .small__header {
   font-weight: bolder;
   margin-bottom: 5px;
@@ -782,14 +783,13 @@ breadcrumbs
   display: inline-block;
 }
 
-
 /* START login */
-.login{
+.login {
   max-width: 60%;
   margin: 50px auto;
 }
 
-.login__btn{
+.login__btn {
   display: block;
   margin: 20px auto;
   width: 80%;
@@ -802,8 +802,34 @@ breadcrumbs
 }
 
 /* END login */
+/* START error */
+.error__title {
+  color:rgba(245, 85, 54, 1);
+  font-family: 'Roboto Slab', serif;
+}
 
-/* END welcome */
+.error__text {
+  color: rgba(29, 33, 41, 1);
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+.error__img-wrap {
+  width: 80%;
+  margin: 20px auto;
+  padding: 1.5rem;
+  border-radius: 5px;
+  box-shadow: -2px -2px 10px 0 rgba(255, 255, 255, 1), 10px 10px 10px 0 rgba(0, 0, 0, .3);
+}
+
+.error__img {
+  width: 50%;
+  border-radius: 5px;
+  margin: 1rem auto;
+  display: block;
+}
+
+/* END error */
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
 
