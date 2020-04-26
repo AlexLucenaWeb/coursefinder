@@ -17,12 +17,12 @@ header
               li.nav-item.nav__item
                 a.nav-link.nav__link(href='/user')= user.name
               li.nav-item.nav__item
-                a.nav-link.nav__link(href='/') Logout 
+                span.nav-link.nav__link#btn-logout Logout 
             else
               li.nav-item.nav__item
                 a.nav-link.nav__link(href='/login') Login
               li.nav-item.nav__item
-                a.nav-link.nav__link(href='/signup') Sign Up
+                a.nav-link.nav__link#btn-logout(href='/signup') Sign Up
       
         .col-12
           .social

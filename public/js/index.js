@@ -1,17 +1,10 @@
 import '@babel/polyfill';
-import {login} from './login';
+import { login, logout } from './login';
 
 //DOM elements
-const loginForm = document.querySelector('.form--login');
+const loginForm = document.querySelector('#form');
+const logOutBtn = document.querySelector('#btn-logout');
 
-// if (loginForm) {
-//   loginForm.submit(function(event) {
-//     event.preventDefault();
-//     const email = $('#email').val();
-//     const password = $('#password').val();
-//     login(email, password);
-//   });
-// }
 if (loginForm) {
   loginForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -20,3 +13,5 @@ if (loginForm) {
     login(email, password);
   });
 }
+
+if (logOutBtn) logOutBtn.addEventListener('click', logout);
