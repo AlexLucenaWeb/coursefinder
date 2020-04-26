@@ -1,0 +1,24 @@
+extends skeleton
+
+block main
+  .container
+    .row
+      .col-12
+        .profile
+          - if (user.role === 'admin')      
+            h1.profile__hi.mb-2.text-center= `Hello Admin ${user.name}!`
+            
+          - if (user.role === 'user')      
+            h1.profile__hi.mb-4= `Hello User ${user.name}!`
+            .profle__content.py-4
+              p.my-3.profile__subtitle Your account settings
+              form.form
+                .form-group
+                  label.profile__label(for='name') Name
+                  input#name.form-control.profile__input(type='text', value=`${user.name}`, required)
+                .form-group
+                  label.profile__label(for='email') Email address
+                  input#email.form-control.profile__input(type='email', value=`${user.email}`, required)
+                button.btn.custom__btn.profile__btn Save settings
+              
+      

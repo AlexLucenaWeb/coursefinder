@@ -44,3 +44,11 @@ exports.getLogin = (req, res, next) => {
     title: "Login"
   });
 };
+
+exports.getUser = (req, res) => {
+  res.status(200).render('profile', {
+    title: "Profile"
+  });
+};
+
+
