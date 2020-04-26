@@ -7,6 +7,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const compression = require('compression');
 
 //import error class & controller
 const AppError = require('./utils/appError');
@@ -67,6 +68,7 @@ app.use(hpp({
     ]
 }));
 
+app.use(compression());
 
 //test middleware
 app.use((req, res, next) => {
