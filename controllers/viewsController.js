@@ -1,4 +1,5 @@
 const Course = require('../models/courseModel');
+const User = require('../models/userModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 
@@ -8,7 +9,7 @@ exports.getHomePage = (req, res) => {
   });
 }
 
-exports.getCourses = catchAsync(async(req, res, next) => {
+exports.getCourses = catchAsync(async (req, res, next) => {
   const courses = await Course.find();
   res.status(200).render('courses', {
     title: "Courses",
@@ -17,7 +18,9 @@ exports.getCourses = catchAsync(async(req, res, next) => {
 });
 
 exports.getCourse = catchAsync(async (req, res, next) => {
-  const course = await Course.findOne({ slug: req.params.slug }).populate({
+  const course = await Course.findOne({
+    slug: req.params.slug
+  }).populate({
     path: 'reviews',
     fields: 'review rating user'
   });
@@ -52,3 +55,21 @@ exports.getUser = (req, res) => {
 };
 
 
+exports.updateUser = catchAsync(async (req, res, next) => {
+  const updatedUser = await User.findByIdAndUpdate(
+    req.user.id,
+    {
+      name: req.body.name,
+      email: req.body.email
+    },
+    {
+      new: true,
+      runValidators: true
+    }
+  );
+
+  res.status(200).render('profile', {
+    title: 'Profile',
+    user: updatedUser
+  });
+});
